@@ -10,7 +10,7 @@ class FotoComments extends React.Component{
         this.refComment = React.createRef();
     }
 
-    addComment = () =>{
+    addComment =()=>{
         let comment = this.refComment.current.value;
         let fotoComments= this.state.comment;
         fotoComments.push(comment);
@@ -23,14 +23,10 @@ class FotoComments extends React.Component{
         return(
          <>
             <div>
-                <textarea ref={refComment}></textarea>
-            </div>
-            <div>
-                <button onClick = {addComment}>add comment</button>
-            </div>
-            <div>
+                <textarea ref={this.refComment}></textarea>
+                <button onClick = {this.addComment}>add comment</button>
                 <ul>
-                    {this.state.comment.map((item,index) => <li key={index}>{item}</li>)}
+                    {this.state.comment.slice(0,1).map((item,index)=><li key={index.toString()}>{item}</li>)}
                 </ul>
             </div>
          </>

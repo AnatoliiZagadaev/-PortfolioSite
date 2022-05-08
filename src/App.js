@@ -71,21 +71,19 @@ function App() {
                 <img src={autumnForest} alt=" Autumn Forest"/>
                 <span className="innerBlock absolute"> 
                     <span className="blocChild"> 
-                        <h1>Autumn forest</h1> 
-                        <p>Some text that describes the current photo</p> 
-                    </span> 
-                    <span>
+                        <h1>Leave a review</h1> 
                         <FotoComments/>
                     </span>
                 </span>
+                
             </span>
             <span className="space"></span>
             <span className="bloc relative">
                 <img src={duckOnTheWater} alt="Duck on the water"/>
                 <span className="innerBlock absolute"> 
                     <span className="blocChild"> 
-                        <h1>Duck on the water</h1> 
-                        <p>Some text that describes the current photo</p> 
+                    <h1>Leave a review</h1> 
+                        <FotoComments/>
                     </span> 
                 </span>
             </span>
@@ -94,8 +92,8 @@ function App() {
                 <img src={dungeon} alt="The dungeon"/>
                 <span className="innerBlock absolute"> 
                     <span className="blocChild"> 
-                        <h1>The dungeon</h1> 
-                        <p>Some text that describes the current photo</p> 
+                    <h1>Leave a review</h1> 
+                        <FotoComments/>
                     </span> 
                 </span>
             </span>

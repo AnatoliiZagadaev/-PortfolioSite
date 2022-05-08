@@ -1,8 +1,8 @@
 
+
 *{
   box-sizing: border-box;
 }
-
 
 .menu{
   position: fixed;
@@ -43,7 +43,7 @@ section{
 }
 
 .logo{
-  background: url("../src/image/foto.png") no-repeat center;
+  background: url("./image/foto.png") no-repeat center;
   height: 40px;
   width: 40px;
   margin-right: 15px;
@@ -111,11 +111,10 @@ img{
 .bloc .innerBlock { 
   display: none;
   width: 80%; 
-  height: 60%; 
+  height: 80%; 
   justify-content: center; 
-  align-items: center; 
   background-color: rgba(255, 255, 255, 0.8); 
-  top: 20%; 
+  top: 10%; 
   left: 10%; 
 } 
 
@@ -198,4 +197,10 @@ p {
   flex-wrap: nowrap;
 
 }
-
+textarea{
+  display: flex;
+  margin: 20px;
+}
+button{
+  margin-left: 20px;
+}
