@@ -1,19 +1,19 @@
 import React from 'react';
 import './App.css';
-import Photographer from './Peges/Photographer.png';
-import autumnForest from './Peges/1.jpg';
-import duckOnTheWater from './Peges/2.jpg';
-import dungeon from './Peges/4.jpg';
-import bigCity from './Peges/4.jpg';
-import oceanBeach from './Peges/5.jpg';
-import nationalPark from './Peges/7.jpg';
-import tangerineAndChocolate from './Peges/8.jpg';
-import manOnTheStone from './Peges/9.jpg';
-import youngGirl from './Peges/11.jpg';
-import pieceOfPie from './Peges/12.jpg';
-import theTablet from './Peges/13.jpg';
-import volleyball from './Peges/14.jpg';
-import search from './Peges/154836.png';
+import Photographer from './image/Photographer.png';
+import autumnForest from './image/1.jpg';
+import duckOnTheWater from './image/2.jpg';
+import dungeon from './image/4.jpg';
+import bigCity from './image/4.jpg';
+import oceanBeach from './image/5.jpg';
+import nationalPark from './image/7.jpg';
+import tangerineAndChocolate from './image/8.jpg';
+import manOnTheStone from './image/9.jpg';
+import youngGirl from './image/11.jpg';
+import pieceOfPie from './image/12.jpg';
+import theTablet from './image/13.jpg';
+import volleyball from './image/14.jpg';
+import search from './image/154836.png';
 import FotoComments from './FotoComents';
 
 function App() {
