@@ -7,24 +7,19 @@ class FotoComments extends React.Component{
         this.state={
          comment :[]
         }
-        this.refComment = React.createRef();
+        this.addComment=this.addComment.bind(this);
     }
 
-    addComment =()=>{
-        let comment = this.refComment.current.value;
-        let fotoComments= this.state.comment;
-        fotoComments.push(comment);
-        this.setState({
-            'fotoComments':fotoComments
-        });
-        this.refComment.current.value='';
+    addComment (event){
+        this.setState({comment:event.target.value});       
+     
     }
     render(){
         return(
          <>
             <div>
-                <textarea ref={this.refComment}></textarea>
-                <button onClick = {this.addComment}>add comment</button>
+                <textarea comment = {this.state.value} onChange={this.addComment}/>
+                <button onClick = {this.comment}>add comment</button>
                 <ul>
                     {this.state.comment.slice(0,1).map((item,index)=><li key={index.toString()}>{item}</li>)}
                 </ul>
