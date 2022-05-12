@@ -1,6 +1,7 @@
 
-import { Component } from 'react';
-import Photographer from '../Peges/Photographer.png';
+import React, { Component } from 'react';
+import Photographer from '../image/Photographer.png';
+
 
 export default class About extends Component {
     render(){

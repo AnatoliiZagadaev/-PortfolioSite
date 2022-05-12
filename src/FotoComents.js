@@ -1,24 +1,30 @@
 import React from "react";
 
+
 class FotoComments extends React.Component{
 
-    constructor(props){
-        super(props);
+    constructor(){
+        super();
         this.state={
          comment :[]
         }
-        this.addComment=this.addComment.bind(this);
+        this.refComment = React.createRef();
     }
 
-    addComment (event){
-        this.setState({comment:event.target.value});       
-     
+    addComment =()=>{
+        let comment = this.refComment.current.value;
+        let fotoComments= this.state.comment;
+        fotoComments.push(comment);
+        this.setState({
+            'fotoComments':fotoComments
+        });
+        this.refComment.current.value='';
     }
     render(){
         return(
          <>
             <div>
-                <textarea type ="text" value = {this.state.value} onChange={this.addComment}/>
+                <textarea ref={this.refComment}></textarea>
                 <button onClick = {this.addComment}>add comment</button>
                 <ul>
                     {this.state.comment.slice(0,1).map((item,index)=><li key={index.toString()}>{item}</li>)}
@@ -28,5 +34,6 @@ class FotoComments extends React.Component{
         );
     }
 }
-
 export default FotoComments;
+  
+

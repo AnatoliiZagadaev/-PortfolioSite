@@ -1,12 +1,13 @@
-import './App.css';
 
-import autumnForest from '../Peges/1.jpg';
-import duckOnTheWater from '../Peges/2.jpg';
-import dungeon from '../Peges/4.jpg';
-import bigCity from '../Peges/4.jpg';
-import oceanBeach from '../Peges/5.jpg';
-import nationalPark from '../Peges/7.jpg';
-import { Component } from "react";
+import React, { Component } from "react";
+import autumnForest from '../image/1.jpg';
+import duckOnTheWater from '../image/2.jpg';
+import dungeon from '../image/3.jpg';
+import bigCity from '../image/4.jpg';
+import oceanBeach from '../image/5.jpg';
+import nationalPark from '../image/7.jpg';
+import FotoComments from '../FotoComents';
+
 
 export default class Portfolio extends Component {
     render(){
@@ -18,8 +19,8 @@ export default class Portfolio extends Component {
                 <img src={autumnForest} alt=" Autumn Forest"/>
                 <span className="innerBlock absolute"> 
                     <span className="blocChild"> 
-                        <h1>Autumn forest</h1> 
-                        <p>Some text that describes the current photo</p> 
+                    <h1>Leave a review</h1> 
+                        <FotoComments/>
                     </span> 
                 </span>
             </span>
@@ -28,8 +29,8 @@ export default class Portfolio extends Component {
                 <img src={duckOnTheWater} alt="Duck on the water"/>
                 <span className="innerBlock absolute"> 
                     <span className="blocChild"> 
-                        <h1>Duck on the water</h1> 
-                        <p>Some text that describes the current photo</p> 
+                    <h1>Leave a review</h1> 
+                        <FotoComments/> 
                     </span> 
                 </span>
             </span>
@@ -38,8 +39,8 @@ export default class Portfolio extends Component {
                 <img src={dungeon} alt="The dungeon"/>
                 <span className="innerBlock absolute"> 
                     <span className="blocChild"> 
-                        <h1>The dungeon</h1> 
-                        <p>Some text that describes the current photo</p> 
+                    <h1>Leave a review</h1> 
+                        <FotoComments/> 
                     </span> 
                 </span>
             </span>
@@ -49,8 +50,8 @@ export default class Portfolio extends Component {
                 <img src={autumnForest} alt="Autumn forest"/>
                 <span className="innerBlock absolute"> 
                     <span className="blocChild"> 
-                        <h1>Autumn forest</h1> 
-                        <p>Some text that describes the current photo</p> 
+                    <h1>Leave a review</h1> 
+                        <FotoComments/>
                     </span> 
                 </span>
             </span>
@@ -59,8 +60,8 @@ export default class Portfolio extends Component {
                 <img src={duckOnTheWater} alt="Duck on the water"/>
                 <span className="innerBlock absolute"> 
                     <span className="blocChild"> 
-                        <h1>Duck on the water</h1> 
-                        <p>Some text that describes the current photo</p> 
+                    <h1>Leave a review</h1> 
+                        <FotoComments/> 
                     </span> 
                 </span>
             </span>
