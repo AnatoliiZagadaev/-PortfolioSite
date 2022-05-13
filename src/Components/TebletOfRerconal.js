@@ -44,7 +44,8 @@ const EditableTable = ({ columns, rows, actions }) => {
         if (row.id === editedRow.id) {
           if (editedRow.firstName) row.firstName = editedRow.firstName;
           if (editedRow.lastName) row.lastName = editedRow.lastName;
-          if (editedRow.role) row.role = editedRow.role;
+          if (editedRow.gender) row.gender = editedRow.gender;
+          if(editedRow.Age) row.Age=editedRow.Age;
         }
 
         return row;
@@ -56,7 +57,7 @@ const EditableTable = ({ columns, rows, actions }) => {
   }
 
   return (
-    <table striped bordered hover>
+    <table className='conteinerTablet'>
       <thead>
       <tr>
         {columns.map((column) => {
@@ -72,9 +73,7 @@ const EditableTable = ({ columns, rows, actions }) => {
           </td>
           <td>
             { isEditMode && rowIDToEdit === row.id
-              ? <form
-                type='text'
-                defaultValue={editedRow ? editedRow.firstName : row.firstName}
+              ? <form type='text' defaultValue={editedRow ? editedRow.firstName : row.firstName}
                 id={row.id}
                 name='firstName'
                 onChange={ (e) => handleOnChangeField(e, row.id) }
@@ -96,32 +95,35 @@ const EditableTable = ({ columns, rows, actions }) => {
           </td>
           <td>
             { isEditMode && rowIDToEdit === row.id
-              ? <form onChange={e => handleOnChangeField(e, row.id)} name="role" defaultValue={row.role}>
-                <option value='Admin'>Admin</option>
-                <option value='Editor'>Editor</option>
-                <option value='Subscriber'>Subscriber</option>
+              ? <form onChange={e => handleOnChangeField(e, row.id)} name="gender" defaultValue={row.gender}>
+                <option value='Man'>Man</option>
+                <option value='Woman'>Woman</option>
               </form>
-              : row.role
+              : row.gender
+            }
+          </td>
+          <td>
+            { isEditMode && rowIDToEdit === row.id
+              ? <form
+                type='text'
+                defaultValue={editedRow ? editedRow.Age : row.Age}
+                id={row.id}
+                name='Age'
+                onChange={ (e) => handleOnChangeField(e, row.id) }
+              />
+              : row.Age
             }
           </td>
           {actions &&
           <td>
             { isEditMode && rowIDToEdit === row.id
-              ? <button onClick={ () => handleSaveRowChanges() } className='custom-table__action-btn' disabled={!editedRow}>
-                Save 
-              </button>
-              : <button  onClick={ () => handleEdit(row.id) } className='custom-table__action-btn'>
-                PencilFill 
-              </button>
+              ? <button onClick={ () => handleSaveRowChanges() } className='actionBtn' disabled={!editedRow}>Save</button>
+              : <button  onClick={ () => handleEdit(row.id) } className='actionBtn'>Edit</button>
             }
 
             { isEditMode && rowIDToEdit === row.id
-              ? <button onClick={() => handleCancelEditing()} className='custom-table__action-btn'>
-                
-              </button>
-              : <button onClick={() => handleRemoveRow(row.id)} className='custom-table__action-btn'>
-                
-              </button>
+              ? <button onClick={() => handleCancelEditing()} className='actionBtn'>Editing</button>
+              : <button onClick={() => handleRemoveRow(row.id)} className='actionBtn'>Remove</button>
             }
           </td>
           }

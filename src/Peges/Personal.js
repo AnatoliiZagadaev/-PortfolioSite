@@ -6,13 +6,14 @@ function App() {
     { field: 'id', fieldName: '#' },
     { field: 'firstName', fieldName: 'First Name' },
     { field: 'lastName', fieldName: 'Last Name' },
-    { field: 'role', fieldName: 'User\'s role' },
+    { field: 'Gender', fieldName: 'Gender' },
+    {fild:'Age',fieldName:'Age'}
   ];
 
   const data = [
-    { id: 1, firstName: 'John', lastName: 'Doe', role: 'Admin' },
-    { id: 2, firstName: 'John', lastName: 'Smith', role: 'Editor'},
-    { id: 3, firstName: 'ohn', lastName: 'mith', role: 'Editor'}
+    { id: 1, firstName: 'John', lastName: 'Doe', gender: 'Man',Age :'23'},
+    { id: 2, firstName: 'Jesica', lastName: 'Smith', gender:'Woman',age:'44'},
+    { id: 3, firstName: 'Bob', lastName: 'Dim', gender: 'Man',Age:'34'}
   ];
 
   return (
@@ -43,7 +44,9 @@ function App() {
                 </span>
             <form/>
             </span>
-      <EditableTable columns={columns} rows={data} actions />
+            <div >
+               <EditableTable columns={columns} rows={data} actions />
+           </div>
     </section>
     </>
   );
