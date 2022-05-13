@@ -1,0 +1,9 @@
+table ,  td {
+    vertical-align: middle;
+  }
+  .custom-table__action-btn {
+  cursor: pointer;
+  border: 1px solid #eee;
+  background: none;
+  margin-right: 5px;
+  }
