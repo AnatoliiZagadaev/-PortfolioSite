@@ -1,12 +1,82 @@
-table , td ,tr {
-    vertical-align: middle;
 
-   
-  }  
   .actionBtn {
-  cursor: pointer;
-  border: 1px solid #eee;
-  background: none;
-  margin-right: 5px;
+    position: relative;
+    display: flex;
+    background-color: #2a7682;
+    border: none;
+    color: white;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    cursor: pointer;
+    justify-content: center;
+
+    border-radius:3px;
+    box-shadow: 2px 2px 1px 1px rgba(12, 12, 12, 0.2);
   }
+
+  table {
+    width: 80%;
+    min-width: 650px;/*минимальный размер*/
+    max-width: 800px;/*максимальный размер*/
+    border-collapse: collapse  ;
+    margin: 40px;
   
+}
+tr, td, th {
+    border: 2px solid rgb(31, 30, 30);
+    text-align: center;
+    padding: 1em 1em;
+}
+.sub {
+    font-style: normal;
+    font-size: 0.6em;
+    color: rgb(0, 0, 0);
+    vertical-align: -0.5em;
+}
+.col-1{
+    background-color: #fff0a2;
+}
+.col-2{
+    background-color: #d1d1ff;
+}
+.col-3{
+    background-color: #ffc2c2;
+}
+.col-4{
+    background-color: #b2ffd1;
+}
+.col-5{
+    background-color: #ffc2ff;
+}
+thead{
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #000000;
+}
+.thead{
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: 700;
+    font-style: normal;
+}
+tbody{
+    font-size: 16px;
+    color: #000000;
+}
+.small_bold{
+    color: #000000;
+    font-weight: 800;
+}
+.small_italic {
+    font-style: italic;
+    font-size: 14px;
+    color: #000000;
+}
+.text_align_left{
+    text-align: left;
+}

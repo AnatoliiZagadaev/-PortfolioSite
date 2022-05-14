@@ -15,7 +15,7 @@ import Header from './Components/Header';
 
 function App() {
   return (
-    <div>  
+    <>  
     <Header/>
     <About/>
     <Portfolio/>
@@ -29,7 +29,7 @@ function App() {
          </Routes>
       </Router>
    <Footer/>
-    </div>
+    </>
   );
 }
 

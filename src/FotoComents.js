@@ -3,8 +3,8 @@ import React from "react";
 
 class FotoComments extends React.Component{
 
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state={
          comment :[]
         }

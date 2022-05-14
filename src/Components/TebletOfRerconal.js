@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from "react";
+import './TabletOfPersonal.css';
 
 
 
@@ -57,7 +58,7 @@ const EditableTable = ({ columns, rows, actions }) => {
   }
 
   return (
-    <table className='conteinerTablet'>
+    <table>
       <thead>
       <tr>
         {columns.map((column) => {
@@ -83,7 +84,7 @@ const EditableTable = ({ columns, rows, actions }) => {
           </td>
           <td>
             { isEditMode && rowIDToEdit === row.id
-              ? <form
+              ? <form 
                 type='text'
                 defaultValue={editedRow ? editedRow.lastName : row.lastName}
                 id={row.id}
