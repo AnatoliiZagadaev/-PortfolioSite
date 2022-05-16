@@ -1,5 +1,5 @@
 import React,{Component} from "react";
-import '../Form.css'
+import '../Components/Form.css';
 import EditableTable from '../Components/TebletOfRerconal';
 
 
@@ -28,8 +28,7 @@ export default class Personal extends Component{
                 firstName:'',
                 surname:'',
                 age:' '
-              },
-              
+              },     
               gender:''
             }};
 

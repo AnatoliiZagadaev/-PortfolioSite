@@ -6,7 +6,8 @@ import dungeon from '../image/3.jpg';
 import bigCity from '../image/4.jpg';
 import oceanBeach from '../image/5.jpg';
 import nationalPark from '../image/7.jpg';
-import FotoComments from '../FotoComents';
+import FotoComments from '../Components/FotoComents';
+import FotoCommentsLifeCycle from "../Components/FotoCommentsLifeCycle";
 
 
 export default class Portfolio extends Component {
@@ -163,8 +164,8 @@ export default class Portfolio extends Component {
             <img src={nationalPark} alt="National Park"/>
             <span className="innerBlock absolute"> 
                 <span className="blocChild"> 
-                    <h1>National Park</h1> 
-                    <p>Some text that describes the current photo</p> 
+                <h1>Leave a review</h1> 
+                  <FotoCommentsLifeCycle/> 
                 </span> 
             </span>
     </span>
