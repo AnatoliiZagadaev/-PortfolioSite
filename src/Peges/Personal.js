@@ -16,8 +16,15 @@ const columns = [
     { id: 2, firstName: 'John', Surname: 'Smith',Age:'30',gender: 'man'},
     { id: 3, firstName: 'Wohn', Surname: 'mith',Age:'40',gender: 'woman'}
   ];
+<<<<<<< HEAD
  
 
+=======
+  const DataPerson = [
+    { id:this.Person.id,firstName:this.Person.firstName, surname:this.Person.surname,Age:this.Person.age,gender:this.Person.gender},
+  
+  ];
+>>>>>>> 176d8df42666fc85f720f1985e633b812bed2cd0
 
 export default class Personal extends Component{
 
