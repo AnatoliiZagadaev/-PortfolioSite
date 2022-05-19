@@ -41,7 +41,7 @@ export default class Personal extends Component{
        Age:this.setState.Person.age,gender:this.setState.Person.gender},
   
   ];
-   const DataPerson = this.Person.assign({},this.Person);
+   const DataPerson = [this.state.Person];
 
 
         this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
