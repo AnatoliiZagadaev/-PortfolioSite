@@ -11,15 +11,15 @@ const columns = [
     { field:'Age', fieldName:'Age'},
     { field: 'Gender', fieldName: 'Gender' },
   ];
-  const data = [
+  /*const data = [
     { id: 1, firstName: 'John', Surname: 'Doe',Age:'45',gender: 'man' },
     { id: 2, firstName: 'John', Surname: 'Smith',Age:'30',gender: 'man'},
     { id: 3, firstName: 'Wohn', Surname: 'mith',Age:'40',gender: 'woman'}
-  ];
-  /*const DataPerson = [
+  ];*/
+  const DataPerson = [
     { id:this.Person.id,firstName:this.Person.firstName, surname:this.Person.surname,Age:this.Person.age,gender:this.Person.gender},
   
-  ];*/
+  ];
 
 export default class Personal extends Component{
 
@@ -27,8 +27,9 @@ export default class Personal extends Component{
     constructor(props) {
         super(props);
         this.state = {
+            DataPerson:[],
           Person:{
-            id:'0',
+            id:' ',
             name:{
               firstName:'',
               surname:'',
@@ -37,10 +38,11 @@ export default class Personal extends Component{
             gender:''
           }};
 
-         /* const DataPerson = [
-            { id:this.state.Person.id,firstName:this.staet.Person.firstName,
-                 surname:this.state.Person.surname,Age:this.state.Person.age,gender:this.state.Person.gender},          
-          ];*/
+          
+          const DataPerson = [
+            { id:this.Person.id,firstName:this.staet.Person.firstName,
+                 surname:this.Person.surname,Age:this.Person.age,gender:this.Person.gender},          
+          ];
 
         this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
         this.handleChangeSurenane = this.handleChangeSurenane.bind(this);
@@ -50,19 +52,19 @@ export default class Personal extends Component{
       }
 
       handleChangeFirstName(event) {
-        this.setState({firstName: event.target.value});
+        this.se({firstName: event.target.value});
       }
       handleChangeSurenane(event){
-          this.setState({surname: event.target.value});
+          this.se({surname: event.target.value});
       }
       handleChangeGender(event){
-          this.setState({gender:event.target.value})
+          this.se({gender:event.target.value})
       }
       handleChangeAge(event){
-          this.setState({age:event.target.value})
+          this.se({age:event.target.value})
       }
       handleSubmit(event) {
-        this.setState(this.state.value);
+        this.se(this.value);
         event.preventDefault();
       }
 
@@ -77,17 +79,17 @@ export default class Personal extends Component{
               <span className="block">
                   <h2>Personal details</h2>
                   <span className="wrapper">
-                      <input type="text" value={this.state.Person.firstName} id="firstname" name="firstname" placeholder="Name"  onChange={this.handleChangeFirstName}/>
-                      <input type="text" value={this.state.Person.surname} id="surname" name="surname" placeholder="Surname"  onChange={this.handleChangeSurenane}/>
+                      <input type="text" value={this.Person.firstName} id="firstname" name="firstname" placeholder="Name"  onChange={this.handleChangeFirstName}/>
+                      <input type="text" value={this.Person.surname} id="surname" name="surname" placeholder="Surname"  onChange={this.handleChangeSurenane}/>
                        <br/>
                   </span>
                   <span className="wrapper">
                       <select id="gender">
-                          <option value={this.state.Person.gender}  onChange={this.handleChangeGender}>--Gender--</option>
+                          <option value={this.Person.gender}  onChange={this.handleChangeGender}>--Gender--</option>
                           <option value="male">Male</option>
                           <option value="female">Female</option>
                       </select>
-                      <input type="number" value={this.state.Person.age} id="birthdate" name="birthdate" placeholder="Age"  onChange={this.handleChangeAge}/>
+                      <input type="number" value={this.Person.age} id="birthdate" name="birthdate" placeholder="Age"  onChange={this.handleChangeAge}/>
                   </span>
                   <span className="wrapper">
                       <input type="submit" className="button" value="submit"/>
@@ -97,7 +99,7 @@ export default class Personal extends Component{
           <hr/>
       </span>
       <div>
-      <EditableTable columns={columns} rows={data} actions />
+      <EditableTable columns={columns} rows={DataPerson} actions />
       </div>
   </section>
   
