@@ -63,8 +63,8 @@ export default class Personal extends Component{
         this.setState(({Person}) => ({Person: {...Person, age:event.target.value}}));
     }
     handleSubmit(event) {
-        this.DataPerson=[this.state.Person]
-        this.setState(this.event.value);
+        //this.setState(this.value);
+        this.setState(this.DataPerson=[this.state.Person]);
         event.preventDefault();
       }
      
