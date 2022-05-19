@@ -36,9 +36,9 @@ export default class Personal extends Component{
           DataPerson:[]
         };
 
-           DataPerson = [
-            { id:this.setState.Person.id,firstName:this.setState.Person.firstName, surname:this.setState.Person.surname,
-             Age:this.setState.Person.age,gender:this.setState.Person.gender},
+           this.setState.DataPerson = [
+            { id:this.state.Person.id,firstName:this.state.Person.firstName, surname:this.state.Person.surname,
+             Age:this.state.Person.age,gender:this.state.Person.gender},
         
         ];
        
@@ -62,11 +62,13 @@ export default class Personal extends Component{
     handleChangeAge(event){
         this.setState(({Person}) => ({Person: {...Person, age:event.target.value}}));
     }
-      handleSubmit(event) {
-        this.setState(this.state.value);
+    handleSubmit(event) {
+        this.DataPerson=[this.state.Person]
+        this.setState(this.event.value);
+        event.preventDefault();
       }
      
-     DataPerson = [this.state.Person];
+
   render(){
       return(
          <section>
@@ -97,7 +99,7 @@ export default class Personal extends Component{
           <hr/>
       </span>
       <div>
-      <EditableTable columns={columns} rows={DataPerson} actions />
+      <EditableTable columns={columns} rows={this.setState.DataPerson} actions />
       </div>
   </section>
   
