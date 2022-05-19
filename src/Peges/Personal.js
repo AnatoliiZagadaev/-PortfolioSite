@@ -37,31 +37,33 @@ export default class Personal extends Component{
 
           
           const DataPerson = [
-            { id:this.Person.id,firstName:this.staet.Person.firstName,
-                 surname:this.Person.surname,Age:this.Person.age,gender:this.Person.gender},          
-          ];
+      { id:this.setState.Person.id,firstName:this.setState.Person.firstName, surname:this.setState.Person.surname,
+       Age:this.setState.Person.age,gender:this.setState.Person.gender},
+  
+  ];
+   const DataPerson = this.Person.assign({},this.Person);
+
 
         this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
         this.handleChangeSurenane = this.handleChangeSurenane.bind(this);
         this.handleChangeAge = this.handleChangeAge.bind(this);
         this.handleChangeGender =this.handleChangeGender.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-      }
-
-      handleChangeFirstName(event) {
-        this.se({firstName: event.target.value});
-      }
-      handleChangeSurenane(event){
-          this.se({surname: event.target.value});
-      }
-      handleChangeGender(event){
-          this.se({gender:event.target.value})
-      }
-      handleChangeAge(event){
-          this.se({age:event.target.value})
-      }
-      handleSubmit(event) {
-        this.se(this.value);
+       }
+        handleChangeFirstName(event) {
+            this.setState(({Person}) => ({Person: {...Person, firstName: event.target.value}}));
+        }
+        handleChangeSurenane(event){
+            this.setState(({Person}) => ({Person: {...Person, surname: event.target.value}}));
+        }
+        handleChangeGender(event){
+            this.setState( ({Person}) => ({Person: {...Person, gender:event.target.value}}));
+        }
+        handleChangeAge(event){
+            this.setState(( {Person}) => ({Person: {...Person, age:event.target.value}}));
+        }
+        handleSubmit(event) {
+        this.setState(this.value);
         event.preventDefault();
       }
 
