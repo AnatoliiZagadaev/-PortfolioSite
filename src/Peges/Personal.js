@@ -36,14 +36,14 @@ export default class Personal extends Component{
           DataPerson:[]
         };
 
-           this.state.DataPerson = [
+          /* this.state.DataPerson = [ -
             { id:this.state.Person.id,
              firstName:this.state.Person.firstName,
              surname:this.state.Person.surname,
              Age:this.state.Person.age,
              gender:this.state.Person.gender},
         
-        ];
+        ];*/
        
 
         this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
@@ -66,10 +66,10 @@ export default class Personal extends Component{
         this.setState(({Person}) => ({Person: {...Person, age:event.target.value}}));
     }
     handleSubmit(event) {
-        //this.setState(this.value);
-        this.setState(this.DataPerson=[this.state.Person]);
-        event.preventDefault();
-      }
+          this.DataPerson=[this.state.Person]
+          this.setState({Person:event.target.value});
+          event.preventDefault();
+        }
      
 
   render(){
