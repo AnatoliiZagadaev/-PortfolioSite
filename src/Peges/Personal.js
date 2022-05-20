@@ -36,9 +36,12 @@ export default class Personal extends Component{
           DataPerson:[]
         };
 
-           this.setState.DataPerson = [
-            { id:this.state.Person.id,firstName:this.state.Person.firstName, surname:this.state.Person.surname,
-             Age:this.state.Person.age,gender:this.state.Person.gender},
+           this.state.DataPerson = [
+            { id:this.state.Person.id,
+             firstName:this.state.Person.firstName,
+             surname:this.state.Person.surname,
+             Age:this.state.Person.age,
+             gender:this.state.Person.gender},
         
         ];
        
@@ -99,7 +102,7 @@ export default class Personal extends Component{
           <hr/>
       </span>
       <div>
-      <EditableTable columns={columns} rows={this.setState.DataPerson} actions />
+      <EditableTable columns={columns} rows={this.state.DataPerson} actions />
       </div>
   </section>
   
