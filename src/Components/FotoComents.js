@@ -1,79 +1,35 @@
-
-
 import React from 'react'
 
 class FotoComments extends React.Component{
+  constructor(props) {
+		super(props);
+		this.state = {items: [], value: ''};
+	}
+	addItem(event) {
+		this.state.items.push(this.state.value);
+		this.setState({items: this.state.items});
+		event.preventDefault();
+	}
+	handleChange(event) {
+		this.setState({value: event.target.value});
+	}
+	render() {
+		const list = this.state.items.slice(0,1).map((item, index) => {
+			return <li key={index}>{item}</li>;
+		});
 
-  state = {
-    comments: [],
-    comment: ''
-  }
-
-  addComment = () => {
-    this.setState({
-      comments: [
-        ...this.state.comments,
-        {
-          id: this.state.comments.length ? this.state.comments.reduce((p, c) => p.id > c.id ? p : c).id + 1 : 1, // max id +1
-          comment: this.state.comment,
-        }
-      ],
-        comment: ''
-    })
-  }
-  removeComment = (id) => {
-    this.setState({comments: this.state.comments.filter(comment => comment.id !== id )})
-  }
-  handleChange = (event) => {
-    this.setState({
-        [event.target.name]: event.target.value,
-    });
-  }
-  render(){
-    return(
-      <div>
-          <textarea name="comment" value={this.state.comment}onChange={this.handleChange}></textarea>
-          <button onClick={this.addComment}>Add Comment</button>
-        {this.state.comments.map(comment => <div key={comment.id}>{comment.id}.{comment.comment}
-          <button onClick={this.removeComment.bind(null, comment.id)}>Remove Comment</button>
-        </div>)}
-      </div>
-    )
-  }
+		return (
+			<div>	
+				<form onSubmit={this.addItem.bind(this)}>
+					<textarea value={this.state.value}	onChange={this.handleChange.bind(this)}/>
+					<input type="submit" />
+				</form>
+        <ul>
+					{list}
+				</ul>
+			</div>
+		);
+	}
 }
-
-
-
-
-   /* constructor(props){
-        super(props);
-        this.state={
-         comment :[]
-        }
-        this.refComment = React.createRef();
-    }
-
-    addComment =()=>{
-        let comment = this.refComment.current.value;
-        let fotoComments= this.state.comment;
-        fotoComments.push(comment);
-        this.setState({
-            'fotoComments':fotoComments
-        });
-        this.refComment.current.value='';
-    }
-    render(){
-        return(
-         <>
-            <div>
-                <textarea ref={this.refComment}></textarea>
-                <button onClick = {this.addComment}>add comment</button>
-                <ul>
-                    {this.state.comment.slice(0,1).map((item,index)=><li key={index.toString()}>{item}</li>)}
-                </ul>
-            </div>
-         </>
-        );
-    }
-}*/
+  
 export default FotoComments;
