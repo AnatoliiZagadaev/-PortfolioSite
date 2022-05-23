@@ -5,7 +5,7 @@ class FotoComments extends React.Component{
 		super(props);
 		this.state = {items: [], value: ''};
 	}
-	addItem(event) {
+	addComment(event) {
 		this.state.items.push(this.state.value);
 		this.setState({items: this.state.items});
 		event.preventDefault();
@@ -20,7 +20,7 @@ class FotoComments extends React.Component{
 
 		return (
 			<div>	
-				<form onSubmit={this.addItem.bind(this)}>
+				<form onSubmit={this.addComment.bind(this)}>
 					<textarea value={this.state.value}	onChange={this.handleChange.bind(this)}/>
 					<input type="submit" />
 				</form>
