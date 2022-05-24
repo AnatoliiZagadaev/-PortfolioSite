@@ -17,7 +17,7 @@ class FotoCommentsLifeCycle extends Component {
   componentWillUnmount=()=>{
     clearInterval(this.localStorage)
   }
-  addComment = () => {
+  addComment=()=> {
     this.setState({
       comments: [
         ...this.state.comments,
