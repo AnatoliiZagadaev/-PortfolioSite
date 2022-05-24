@@ -14,10 +14,9 @@ class FotoComments extends React.Component{
 		this.setState({value: event.target.value});
 	}
 	render() {
-		const list = this.state.items.slice(0,1).map((item, index) => {
+		const Comment = this.state.items.slice(0,1).map((item, index) => {
 			return <li key={index}>{item}</li>;
 		});
-
 		return (
 			<div>	
 				<form onSubmit={this.addComment.bind(this)}>
@@ -25,7 +24,7 @@ class FotoComments extends React.Component{
 					<input type="submit" />
 				</form>
                <ul>
-				 {list}
+				 {Comment}
 				</ul>
 			</div>
 		);

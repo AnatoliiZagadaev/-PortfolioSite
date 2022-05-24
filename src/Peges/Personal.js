@@ -85,6 +85,18 @@ export default Personal;
           },
           DataPerson:[]
         };
+<<<<<<< HEAD
+=======
+
+          /* this.state.DataPerson = [ -
+            { id:this.state.Person.id,
+             firstName:this.state.Person.firstName,
+             surname:this.state.Person.surname,
+             Age:this.state.Person.age,
+             gender:this.state.Person.gender},
+        
+        ];*/
+>>>>>>> a525de2ca37047f96cb9fd3b19adff27c00d18d2
        
 
         this.handleChangeFirstName = this.handleChangeFirstName.bind(this);
@@ -106,6 +118,7 @@ export default Personal;
     handleChangeAge(event){
         this.setState(({Person}) => ({Person: {...Person,age:event.target.value}}));
     }
+<<<<<<< HEAD
      handleSubmit(event) {
         event.preventDefault();
     this.setState(this.state.Person);
@@ -115,6 +128,14 @@ export default Personal;
     
     }
      //console.log( this.state.Person,this.DataPerson)
+=======
+    handleSubmit(event) {
+          this.DataPerson=[this.state.Person]
+          this.setState({Person:event.target.value});
+          event.preventDefault();
+        }
+     
+>>>>>>> a525de2ca37047f96cb9fd3b19adff27c00d18d2
 
   render(){
       return(
