@@ -1,18 +1,22 @@
 import React, { Component } from "react";
 
 class FotoCommentsLifeCycle extends Component {       
-
+  
     state = {
     comments: [],
     comment: ''
+
   }
 
-  componentDidMount() {
+
+  componentDidMount=()=>{
     if (localStorage.getItem('state')) {
       this.setState({ ...JSON.parse(localStorage.getItem('state')) })
     }
   }
-
+  componentWillUnmount=()=>{
+    clearInterval(this.localStorage)
+  }
   addComment = () => {
     this.setState({
       comments: [
@@ -36,20 +40,21 @@ class FotoCommentsLifeCycle extends Component {
   handleChange = (event) => {
     this.setState({
         [event.target.name]: event.target.value,
-    })
+    });
   }
 
-  render() {
-    return (
+  render(){
+    return(
       <div>
           <textarea name="comment" value={this.state.comment}onChange={this.handleChange}></textarea>
           <button onClick={this.addComment}>Add Comment</button>
         {this.state.comments.map(comment => <div key={comment.id}>{comment.id}.{comment.comment}
-          <button onClick={this.removeComment.bind(null, comment.id)}>Remove Comment</button>
+          <button onClick={() => this.removeComment(comment.id)}>Remove Comment</button>
         </div>)}
       </div>
     )
   }
 }
 
-export default FotoCommentsLifeCycle;
+
+export default FotoCommentsLifeCycle

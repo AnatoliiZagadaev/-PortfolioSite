@@ -1,8 +1,49 @@
-import { useState } from "react";
+import  React from "react";
 import './TabletOfPersonal.css';
 
+function Tables(props) {
+  return (
+    <div>
+      <table>
+        <tbody>
+          <tr>
+            <td>Product</td>
+            <td>Count</td>
+            <td>Delete</td>
+            <td>Edit</td>
+          </tr>
+          {props.Products.map((item) => (
+            <tr key={item.id}>
+              <td>{item.name} </td>
+              <td>{item.count}</td>
+              <td>
+                <button
+                  onClick={() => {
+                    props.delete(item);
+                  }}
+                >
+                  Delete
+                </button>
+              </td>
+              <td>
+                <button
+                  onClick={() => {
+                    props.edit(item);
+                  }}
+                >
+                  Edit
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+export default Tables;
 
-const EditableTable = ({ columns, rows, actions }) => {
+/*const EditableTable = ({ columns, rows, actions }) => {
   const [isEditMode, setIsEditMode] = useState(false);
   const [rowIDToEdit, setRowIDToEdit] = useState(undefined);
   const [rowsState, setRowsState] = useState(rows);
@@ -146,8 +187,6 @@ const EditableTable = ({ columns, rows, actions }) => {
       })}
       </tbody>
    </table>
-    
-  );
-};
+  )
+}*/
 
-export default EditableTable;

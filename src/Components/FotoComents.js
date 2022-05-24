@@ -24,8 +24,8 @@ class FotoComments extends React.Component{
 					<textarea value={this.state.value}	onChange={this.handleChange.bind(this)}/>
 					<input type="submit" />
 				</form>
-        <ul>
-					{list}
+               <ul>
+				 {list}
 				</ul>
 			</div>
 		);
