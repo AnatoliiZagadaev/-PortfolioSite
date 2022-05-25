@@ -8,10 +8,9 @@ import {
 import About from './Peges/About.js';
 import Portfolio from "./Peges/Portfolio.js";
 import Instagramm from "./Peges/Instagramm.js";
-import Personal from './Peges/Personal.js';
 import Footer from './Components/Footer';
 import Header from './Components/Header';
-
+import Personal from './Peges/Personal';
 
 function App() {
   return (
