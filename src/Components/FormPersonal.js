@@ -72,17 +72,17 @@ export default class Modal extends React.Component {
       <React.Fragment>
         <div>
         <button className="actionBtn"
-        style={{ left: "40%", position: "relative" }}
+        style={{ left: "31%", position: "relative" }}
          onClick={() => this.setState({ isOpen: true })}>
           Add Person
         </button>
         <button className="actionBtn"
-        style={{ left: "41%", position: "relative" }}
+        style={{ left: "39%", position: "relative" }}
          onClick={() => this.handleSort}>
           sort by age
         </button>
         <button className="actionBtn"
-        style={{ left: "43%", position: "relative" }}
+        style={{ left: "45%", position: "relative" }}
          onClick={() => this.handleReverse}>
           Reverse
         </button>

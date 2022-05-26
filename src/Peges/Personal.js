@@ -34,7 +34,7 @@ function Personal(){
 
  
  
-  const [editDataPerson, setEditDataPerson] = useState(null);
+  const [editDataPerson] = useState(null);
   function deleteDataPerson(dataperson) {
     setDataPerson(DataPerson.filter((p) => p !== dataperson));
   }
@@ -61,17 +61,13 @@ function Personal(){
     const sortedReverse = [...DataPerson].reverse();
     setDataPerson(sortedReverse)
   }
-  const editDataPersonHandler = (dataperson) => {
-    console.log("edit");
-    setEditDataPerson(dataperson);
-  };
+ 
   return (
     <div>
       <h1 style={{ textAlign: "center" }}>Data Person</h1>
       <Tables
         DataPerson={DataPerson}
         delete={deleteDataPerson}
-        edit={editDataPersonHandler}
       />
       <Modal sorted={handleSort} add={addDataPerson} save={saveDataPerson} sortedReverse={handleReverse} dataperson={editDataPerson} />
     </div>
