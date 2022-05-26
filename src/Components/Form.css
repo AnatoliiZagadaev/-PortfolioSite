@@ -14,7 +14,7 @@ h2{
 .containerForm {
     display: block;
     margin:0 auto;
-    width: 500px;
+    width: 510px;
     background-color:rgb(252, 250, 250);
     border-radius: 5px;
     padding: 2em;
@@ -54,7 +54,6 @@ input[type=text], select, input[type=date], input[type=password] {
 }
 .block .wrapper > .button {
     position: relative;
-    display: flex;
     background-color: #2a7682;
     border: none;
     color: white;
@@ -75,7 +74,7 @@ table {
     font-size: 14px;
     border-collapse: collapse;
     text-align: center;
-    left:28%; 
+    left:30%; 
     position: relative;
   }
   th,
@@ -103,7 +102,7 @@ table {
       background-color: #2a7682;
   
       margin-right: 5px;
-      display: flex;
+    
       flex-direction: row;
       flex-wrap: nowrap;
       align-content: flex-start;

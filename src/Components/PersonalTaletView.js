@@ -4,7 +4,7 @@ import '../Components/Form.css';
 
 function Tables(props) {
   return (
-    <section>
+    <div>
       <table>
         <tbody>
           <tr>
@@ -14,7 +14,7 @@ function Tables(props) {
             <td>Age</td>
             <td>Delete</td>
           </tr>
-          {props.Products.map((item) => (
+          {props.DataPerson.map((item) => (
             <tr key={item.id}>
               <td>{item.firstName} </td>
               <td>{item.surname}</td>
@@ -22,7 +22,10 @@ function Tables(props) {
               <td>{item.age}</td>
               <td>
                 <button className="actionBtn"
-                  onClick={() => {props.delete(item);}}>
+                  onClick={() => {
+                    props.delete(item);
+                  }}
+                >
                   Delete
                 </button>
               </td>
@@ -30,8 +33,7 @@ function Tables(props) {
           ))}
         </tbody>
       </table>
-    </section>
+    </div>
   );
 }
-
 export default Tables;

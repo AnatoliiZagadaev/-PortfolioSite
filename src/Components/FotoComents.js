@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import '../Components/Form.css';
 
 class FotoComments extends React.Component{
   constructor(props) {
@@ -14,21 +15,18 @@ class FotoComments extends React.Component{
 		this.setState({value: event.target.value});
 	}
 	render() {
-		const Comment = this.state.items.slice(0,1).map((item, index) => {
-			return <li key={index}>{item}</li>;
-		});
 		return (
 			<div>	
-				<form onSubmit={this.addComment.bind(this)}>
+				<form  onSubmit={this.addComment.bind(this)}>
 					<textarea value={this.state.value}	onChange={this.handleChange.bind(this)}/>
-					<input type="submit" />
+					<input type="submit" className='actionBtn'/>
 				</form>
-               <ul>
-				 {Comment}
+			   <ul>
+				 {this.state.items.slice(0,1).map((item, index) => {return <li key={index}>{item}</li>})}
 				</ul>
 			</div>
 		);
-	}
+}
 }
   
 export default FotoComments;

@@ -3,65 +3,80 @@ import Tables from '../Components/PersonalTaletView';
 import Modal from '../Components/FormPersonal.js';
 
 function Personal(){
-    const [Products, setProducts] = useState([
-        {
-          firstName:'Анатолій',
-           surname:'Загадаєв', 
-           age:'36 ',
-            gender:'male',
-            id: 1
-        },
-        {
-          firstName:'Анатолій',
-           surname:'Загадаєв', 
-           age:'36 ',
-            gender:'male',
-            id: 2
-        },
-        {
-          
-          firstName:'Анатолій',
-           surname:'Загадаєв', 
-           age:'36 ',
-            gender:'male',
-            id: 3
-        }
-      ]);
-    
-      const [editProduct, setEditProduct] = useState(null);
-      const deleteProduct = (product) => {
-        setProducts(Products.filter((p) => p !== product));
-      };
-    
-      const addProduct = (product) => {
-        setProducts([...Products, product]);
-      };
-    
-      const saveProduct = (product) => {
-        setProducts(
-          Products.reduce((acc, p) => {
-            if (p.id === product.id) acc.push(product);
-            else acc.push(p);
-            return acc;
-          }, [])
-        );
-      };
-    
-      const editProductHandler = (product) => {
-        console.log("edit");
-        setEditProduct(product);
-      };
-      return (
-        <div>
-          <h1 style={{ textAlign: "center" }}>Product</h1>
-          <Tables
-            Products={Products}
-            delete={deleteProduct}
-            edit={editProductHandler}
-          />
-          <Modal add={addProduct} save={saveProduct} product={editProduct} />
-        </div>
-      );
+  const [DataPerson, setDataPerson] = useState([
+    {
+      firstName:'Анатолій',
+       surname:'Загадаєв', 
+       age:'34 ',
+        gender:'male',
+        id: 1
+    },
+    {
+      firstName:'Анатолій',
+       surname:'Загадаєв', 
+       age:'36 ',
+        gender:'male',
+        id: 2
+    },
+    {
+      
+      firstName:'Анатолій',
+       surname:'Загадаєв', 
+       age:'30 ',
+        gender:'male',
+        id: 3
     }
+  ]);
+
+  DataPerson.sort((a, b) => (a.age > b.age) ? 1 : -1)
+    console.log(DataPerson)
+
+
+ 
+ 
+  const [editDataPerson, setEditDataPerson] = useState(null);
+  function deleteDataPerson(dataperson) {
+    setDataPerson(DataPerson.filter((p) => p !== dataperson));
+  }
+
+  const addDataPerson = (dataperson) => {
+    setDataPerson([...DataPerson, dataperson]);
+  };
+
+  const saveDataPerson = (dataperson) => {
+    setDataPerson(
+      DataPerson.reduce((acc, p) => {
+        if (p.id === dataperson.id) acc.push(dataperson);
+        else acc.push(p);
+        return acc;
+      }, [])
+    );
+  };
+  const handleSort = () => {
+    const sorted = [...DataPerson].sort((a, b) => b.age - a.age)
+    console.log("sorted");
+    setDataPerson(sorted)
+  }
+  const handleReverse =()=>{
+    const sortedReverse = [...DataPerson].reverse();
+    setDataPerson(sortedReverse)
+  }
+  const editDataPersonHandler = (dataperson) => {
+    console.log("edit");
+    setEditDataPerson(dataperson);
+  };
+  return (
+    <div>
+      <h1 style={{ textAlign: "center" }}>Data Person</h1>
+      <Tables
+        DataPerson={DataPerson}
+        delete={deleteDataPerson}
+        edit={editDataPersonHandler}
+      />
+      <Modal sorted={handleSort} add={addDataPerson} save={saveDataPerson} sortedReverse={handleReverse} dataperson={editDataPerson} />
+    </div>
+  );
+}
+
 
 export default Personal;

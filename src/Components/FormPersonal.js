@@ -21,6 +21,8 @@ export default class Modal extends React.Component {
     this.handleChangeSurenane = this.handleChangeSurenane.bind(this);
     this.handleChangeAge = this.handleChangeAge.bind(this);
     this.handleChangeGender =this.handleChangeGender.bind(this);
+    this.handleSort=this.handleSort.bind(this);
+    this.handleReverse=this.handleReverse.bind(this);
   }
 
   componentDidUpdate(prevProp) {
@@ -34,6 +36,7 @@ export default class Modal extends React.Component {
     }
   }
 
+
   addHandler() {
     this.props.add({ ...this.state.item, id: idGenerator.next() });
     this.setState({ isOpen: false, item:{ firstName:'', surname:'', age:' ', gender:''} });
@@ -42,6 +45,14 @@ export default class Modal extends React.Component {
   saveHandler() {
     this.props.save(this.state.item);
     this.setState({ isOpen: false, item:{ firstName:'', surname:'', age:' ', gender:''} });
+  }
+  handleSort(){
+    this.props.sorted(this.state.item)
+    this.setState(this.state.item)
+  }
+  handleReverse(){
+    this.props.sortedReverse(this.state.item)
+    this.setState(this.state.person)
   }
 
   handleChangeFirstName(event) {
@@ -59,11 +70,24 @@ export default class Modal extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <div>
         <button className="actionBtn"
         style={{ left: "40%", position: "relative" }}
          onClick={() => this.setState({ isOpen: true })}>
           Add Person
         </button>
+        <button className="actionBtn"
+        style={{ left: "41%", position: "relative" }}
+         onClick={() => this.handleSort}>
+          sort by age
+        </button>
+        <button className="actionBtn"
+        style={{ left: "43%", position: "relative" }}
+         onClick={() => this.handleReverse}>
+          Reverse
+        </button>
+      </div>
+       
 
         {this.state.isOpen && (
           <section>      
