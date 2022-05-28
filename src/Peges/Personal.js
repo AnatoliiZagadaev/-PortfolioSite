@@ -53,7 +53,7 @@ function Personal(){
     );
   };
   const handleSort = () => {
-    const sorted = [...DataPerson].sort((a, b) => b.age - a.age)
+    const sorted = [...DataPerson].sort(((a, b) => b.age - a.age) ? 1 : -1)
     console.log("sorted");
     setDataPerson(sorted)
   }
