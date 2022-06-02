@@ -8,7 +8,6 @@ class FotoCommentsLifeCycle extends Component {
 
   }
 
-
   componentDidMount=()=>{
     if (localStorage.getItem('state')) {
       this.setState({ ...JSON.parse(localStorage.getItem('state')) })

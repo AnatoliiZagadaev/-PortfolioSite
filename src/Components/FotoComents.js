@@ -4,29 +4,31 @@ import '../Components/Form.css';
 class FotoComments extends React.Component{
   constructor(props) {
 		super(props);
-		this.state = {items: [], value: ''};
+		this.state = {items: [], comment: ''};
 	}
-	addComment(event) {
-		this.state.items.push(this.state.value);
+	addComment=(event)=>{
+		//const newitem=[...item,value]
+		this.state.items.push(this.state.comment);
 		this.setState({items: this.state.items});
 		event.preventDefault();
 	}
-	handleChange(event) {
-		this.setState({value: event.target.value});
+	handleChange=(event)=>{
+		this.setState({comment: event.target.value});
 	}
-	render() {
+
+	render(){
 		return (
 			<div>	
-				<form  onSubmit={this.addComment.bind(this)}>
-					<textarea value={this.state.value}	onChange={this.handleChange.bind(this)}/>
-					<input type="submit" className='actionBtn'/>
-				</form>
-			   <ul>
-				 {this.state.items.slice(0,1).map((item, index) => {return <li key={index}>{item}</li>})}
-				</ul>
-			</div>
+			<form  onSubmit={this.addComment}>
+				<textarea value={this.state.comment}	onChange={this.handleChange}/>
+				<input type="submit" className='actionBtn'/>
+			</form>
+		   <ul>
+			 {this.state.items.slice(0,1).map((item, index) => {return <li key={index}>{item}</li>})}
+			</ul>
+		</div>
 		);
 }
 }
-  
+
 export default FotoComments;
