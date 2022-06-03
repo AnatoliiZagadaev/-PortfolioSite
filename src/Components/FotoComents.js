@@ -12,6 +12,12 @@ class FotoComments extends React.Component{
 		this.setState({items: this.state.items});
 		event.preventDefault();
 	}
+	addComment = (value) => {
+      const comment= [...this.state.comment]
+      comment.push(value)
+      this.setState({
+         comment
+     })
 	handleChange=(event)=>{
 		this.setState({comment: event.target.value});
 	}
