@@ -4,12 +4,12 @@ import '../Components/Form.css';
 class FotoComments extends React.Component{
   constructor(props) {
 		super(props);
-		this.state = {items: [], comment: ''};
+		this.state = {comments: [], comment: ''};
 	}
-	addComment=(event)=>{
-		//const newitem=[...item,value]
-		this.state.items.push(this.state.comment);
-		this.setState({items: this.state.items});
+	addComment = (event) => {
+		const comments= [...this.state.comments]
+		comments.push(this.state.comment)
+		this.setState({comments })
 		event.preventDefault();
 	}
 	handleChange=(event)=>{
@@ -24,7 +24,7 @@ class FotoComments extends React.Component{
 				<input type="submit" className='actionBtn'/>
 			</form>
 		   <ul>
-			 {this.state.items.slice(0,1).map((item, index) => {return <li key={index}>{item}</li>})}
+			 {this.state.comments.slice(0,1).map((item, index) => {return <li key={index}>{item}</li>})}
 			</ul>
 		</div>
 		);
