@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import Photographer from '../image/Photographer.png';
-
+import FocusArrow from '../Components/OnFocusArrow'
 
 export default class About extends Component {
     render(){
@@ -20,14 +20,7 @@ export default class About extends Component {
                    </ul>
                 </span>
                 <span className="text">
-                    <ul>
-                        <li>200+ happy clients</li>
-                        <li>120 portrait shoots</li>
-                        <li>600+ nature shoots</li>
-                        <li>1000+ wedding shats</li>
-                        <li>12 countries visited</li>
-                        <li>600+ coffe drinket</li>
-                    </ul>
+                   <FocusArrow />
                 </span>
             </span>
         </section>
