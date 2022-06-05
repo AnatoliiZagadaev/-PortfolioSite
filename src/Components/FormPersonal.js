@@ -28,25 +28,22 @@ export default class Modal extends React.Component {
     }
   }
 
-
   addHandler=()=>{
     this.props.add({ ...this.state.item, id: idGenerator.next() });
     this.setState({ isOpen: false, item:{ firstName:'', surname:'', age:' ', gender:''} });
   }
-
   saveHandler=()=>{
     this.props.save(this.state.item);
     this.setState({ isOpen: false, item:{ firstName:'', surname:'', age:' ', gender:''} });
   }
   handleSort=()=>{
     this.props.sorted(this.state.item)
-    this.setState(this.state.item)
+    this.setState(this.steta.item)
   }
   handleReverse=()=>{
     this.props.sortedReverse(this.state.item)
-    this.setState(this.state.person)
+    this.setState(this.state.item)
   }
-
   handleChangeFirstName=(event)=>{
     this.setState({item: {...this.state.item, firstName: event.target.value}});
  }
@@ -60,21 +57,15 @@ export default class Modal extends React.Component {
     this.setState({item: {...this.state.item,age:event.target.value}});
     }
   render() {
+    console.log('sorted', this.props.sorted)
+    console.log('item', this.state.item)
+    console.log('person', this.person)
     return(
       <React.Fragment>
       <div className="conteinerBtn">
-      <button className="actionBtn"    
-       onClick={() => this.setState({ isOpen: true })}>
-        Add Person
-      </button>
-      <button className="actionBtn"
-       onClick={() => this.handleSort}>
-        sort by age
-      </button>
-      <button className="actionBtn"
-       onClick={() => this.handleReverse}>
-        Reverse
-      </button>
+      <button className="actionBtn"onClick={() => this.setState({ isOpen: true })}>Add Person</button>
+      <button className="actionBtn"onClick={() => this.handleSort}>sort by age</button>
+      <button className="actionBtn"onClick={() => this.handleReverse}>Reverse</button>
     </div>
       {this.state.isOpen && (
         <section>      
@@ -99,8 +90,8 @@ export default class Modal extends React.Component {
             {!this.state.item.id && (
               <button className="actionBtn" onClick={this.addHandler}>Add</button>
             )}
-            {this.state.item.id && (
-              <button className="actionBtn" onClick={this.saveHandler}>Save</button>
+             {this.state.item.id && (
+              <button className="actionBtn" onClick={this.saveHandler}>Add</button>
             )}
               </span>
       </section> 
