@@ -76,6 +76,7 @@ nav ul a:hover {
   color: #989898;
   border-bottom-color: #989898;
 }
+
 li:focus {
   color: red;
 }

@@ -30,7 +30,7 @@ import Modal from '../Components/FormPersonal.js';
             }
           ]);
         
-          DataPerson.sort((a, b) => (a.age > b.age) ? 1 : -1)
+          //DataPerson.sort((a, b) => (a.age > b.age) ? 1 : -1)
             console.log(DataPerson)
         
           const [editDataPerson] = useState(null);
@@ -51,11 +51,20 @@ import Modal from '../Components/FormPersonal.js';
               }, [])
             );
           };
-          const sortPerson = () => {
-            const sorted = [...DataPerson].sort((a, b) => b.age - a.age ? 1 : -1)
+          /*const sortDataPerson = () => {
+            const sorted = [...DataPerson]
+            DataPerson.sort((a, b) => b.age - a.age ? 1 : -1)
             console.log("sorted");
-            setDataPerson(sorted)
-          }
+            setDataPerson({sorted})
+          }*/
+          const sortDataPerson = () => {
+            const sorted = [
+              ...DataPerson.sort((a, b) => {
+                return a.age.localeCompare(b.age);
+              })
+            ];
+            setDataPerson(sorted);
+          };
           const handleReverse =()=>{
             const sortedReverse = [...DataPerson].reverse();
             setDataPerson(sortedReverse)
@@ -63,7 +72,7 @@ import Modal from '../Components/FormPersonal.js';
           return(
         <div>
           <Tables DataPerson={DataPerson} delete={deleteDataPerson}/>
-          <Modal sorted={sortPerson} add={addDataPerson} save={saveDataPerson} sortedReverse={handleReverse} dataperson={editDataPerson} />
+          <Modal sorted={sortDataPerson} add={addDataPerson} save={saveDataPerson} sortedReverse={handleReverse} dataperson={editDataPerson} />
         </div>
          );
          

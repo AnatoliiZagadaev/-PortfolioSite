@@ -20,7 +20,7 @@ export default class About extends Component {
                    </ul>
                 </span>
                 <span className="text">
-                   <FocusArrow />
+                   <FocusArrow/>
                 </span>
             </span>
         </section>
