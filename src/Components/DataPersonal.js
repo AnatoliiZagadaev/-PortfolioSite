@@ -63,7 +63,7 @@ import Modal from '../Components/FormPersonal.js';
                 return a.age.localeCompare(b.age);
               })
             ];
-            setDataPerson(sorted);
+            setDataPerson({sorted});
           };
           const handleReverse =()=>{
             const sortedReverse = [...DataPerson].reverse();
