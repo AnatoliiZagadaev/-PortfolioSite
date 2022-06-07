@@ -1,6 +1,5 @@
 
 import React from "react";
-import ReactDOM from "react-dom";
 import ReactDragList from "react-drag-list";
 
 
@@ -49,4 +48,3 @@ export default class DragAndDrop extends React.Component {
     );
   }
 }
-ReactDOM.render(<DragAndDrop/>, document.getElementById("root"));
