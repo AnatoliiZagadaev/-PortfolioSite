@@ -1,5 +1,5 @@
 import React from "react";
- 
+
 
 export default class Starswar extends React.Component{
     state = {
@@ -9,14 +9,12 @@ export default class Starswar extends React.Component{
       getData = async () => {
         const response = await fetch("https://swapi.dev/api/people/");
         const data = await response.json();
-        console.log("data", data);
         this.setState({ starswars: data.results });
       };
     
       componentDidMount() {
         this.getData();
       }
-    
       render() {
         const { starswars } = this.state;
         return (
@@ -39,7 +37,7 @@ export default class Starswar extends React.Component{
             </tbody>
         </table>
     </div>
-    )
+)
 }
 }
       

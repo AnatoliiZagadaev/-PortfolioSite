@@ -11,6 +11,7 @@ import Instagramm from "./Peges/Instagramm.js";
 import Footer from './Components/Footer';
 import Header from './Components/Header';
 import Personal from './Peges/Personal';
+import  Starswar from './Components/StarWors'
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
     <Portfolio/>
     <Instagramm/>
     <Personal/>
+    <Starswar/>
     <Router>
          <Routes>
              <Route  path="/About" component = {About}/>

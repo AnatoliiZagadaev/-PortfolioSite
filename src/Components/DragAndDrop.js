@@ -25,8 +25,8 @@ export default class DragAndDrop extends React.Component {
     dataSource: dataArray
   };
 
-  handleUpdate = (evt, updated) => {
-    console.log(evt); 
+  handleUpdate = (event, updated) => {
+    console.log(event); 
     console.log(updated);
   };
 
