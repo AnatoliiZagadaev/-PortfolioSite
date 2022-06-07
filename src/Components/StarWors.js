@@ -1,44 +1,26 @@
 import React from "react";
-
+import  Tables from '../Components/StarWorsView'
 
 export default class Starswar extends React.Component{
     state = {
-        starswars: []
+        Starswars: []
       };
     
       getData = async () => {
         const response = await fetch("https://swapi.dev/api/people/");
         const data = await response.json();
-        this.setState({ starswars: data.results });
+        this.setState({ Starswars: data.results });
       };
     
       componentDidMount() {
         this.getData();
       }
-      render() {
-        const { starswars } = this.state;
+      render(){
+        const { Starswars } = this.state;
         return (
-          <div >
-            <h1>The Star Wars Person</h1>
-            <table>
-              <tbody>
-                <tr>
-                  <td>Name</td>
-                  <td>Height</td>
-                  <td>Eye color</td>
-               </tr>
-                   {starswars.map(({name,height,eye_color}) => (
-                 <tr key={name}>
-                    <td>{name} </td>
-                   <td>{height} </td>
-                   <td>{eye_color}</td>
-               </tr>
-                ))};
-            </tbody>
-        </table>
-    </div>
-)
-}
+        <Tables Starswars={Starswars}/>
+);
+}       
 }
       
     
