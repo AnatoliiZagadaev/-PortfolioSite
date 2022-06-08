@@ -31,20 +31,20 @@ export default class DragAndDrop extends React.Component {
 
   render() {
     return (
-      <section>
+      <React.Fragment>
         <ReactDragList
           dataSource={this.state.dataSource}
           rowKey="list"
           row={(record, index) => (
-            <div key={index}>
-             <span>{record.list }</span>
-            <span>{record.gen }</span>
-            </div>
+            <li key={index}>
+             <li>{record.list }</li>
+            <span >{record.gen }</span>
+            </li>
           )}
           handles={false}
           onUpdate={this.handleUpdate}
         />
-      </section>
+      </React.Fragment>
     );
   }
 }
