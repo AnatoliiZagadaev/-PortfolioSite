@@ -36,10 +36,10 @@ export default class DragAndDrop extends React.Component {
           dataSource={this.state.dataSource}
           rowKey="list"
           row={(record, index) => (
-            <li key={index}>
+            <ul key={index}>
              <li>{record.list }</li>
             <span >{record.gen }</span>
-            </li>
+            </ul>
           )}
           handles={false}
           onUpdate={this.handleUpdate}
