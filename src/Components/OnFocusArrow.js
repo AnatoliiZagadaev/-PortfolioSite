@@ -12,6 +12,9 @@ export default class FocusArrow extends React.Component {
     }
     moveFocus() {
       const node = this.myRef.current;
+      const activeMove = document.getElementsByClassName("activeMove");
+      const actives = document.getElementsByClassName('active');
+
       node.addEventListener('keydown', function(event) {
         const active = document.activeElement;
         if(event.keyCode === 40 && active.nextSibling) {
@@ -20,19 +23,27 @@ export default class FocusArrow extends React.Component {
         if(event.keyCode === 38 && active.previousSibling) {
           active.previousSibling.focus();
         }
-      });
+      
+       for (const i = 0; activeMove.length > i; i++) {
+        activeMove[i].onclick = function() {
+         const currentActive = actives[0];
+        if (currentActive)
+         currentActive.classList.remove("active");
+       if (currentActive !== this)
+         this.classList.add("active");
+      }}});
     }
-   
+    
     render() {
       return (
         <React.Fragment>
         <ul ref={this.myRef} >
-         <li tabIndex="0">200+ happy clients</li>
-         <li tabIndex="1">120 portrait shoots</li>
-         <li tabIndex="2">600+ nature shoots</li>
-         <li tabIndex="3">1000+ wedding shats</li>
-         <li tabIndex="4">12 countries visited</li>
-         <li tabIndex="5">600+ coffe drinket</li>
+         <li className='activeMove' tabIndex="0">200+ happy clients</li>
+         <li  className='activeMove'tabIndex="1">120 portrait shoots</li>
+         <li  className='activeMove'tabIndex="2">600+ nature shoots</li>
+         <li className='activeMove' tabIndex="3">1000+ wedding shats</li>
+         <li className='activeMove' tabIndex="4">12 countries visited</li>
+         <li className='activeMove' tabIndex="5">600+ coffe drinket</li>
      </ul>
      </React.Fragment>
       )
