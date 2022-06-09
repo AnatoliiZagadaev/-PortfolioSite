@@ -24,7 +24,7 @@ export default class FocusArrow extends React.Component {
           active.previousSibling.focus();
         }
       
-       for (const i = 0; activeMove.length > i; i++) {
+       for (let i = 0; activeMove.length > i; i++) {
         activeMove[i].onclick = function() {
          const currentActive = actives[0];
         if (currentActive)
