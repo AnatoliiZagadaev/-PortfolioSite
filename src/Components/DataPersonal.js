@@ -31,6 +31,7 @@ import Modal from '../Components/FormPersonal.js';
           ]);
         
           //DataPerson.sort((a, b) => (a.age > b.age) ? 1 : -1)
+          //DataPerson.reverse()
             console.log(DataPerson)
         
           const [editDataPerson] = useState(null);
@@ -51,28 +52,24 @@ import Modal from '../Components/FormPersonal.js';
               }, [])
             );
           };
-          /*const sortDataPerson = () => {
-            const sorted = [...DataPerson]
-            DataPerson.sort((a, b) => b.age - a.age ? 1 : -1)
-            console.log("sorted");
-            setDataPerson({sorted})
-          }*/
           const sortDataPerson = () => {
-            const sorted = [
-              ...DataPerson.sort((a, b) => {
-                return a.age.localeCompare(b.age);
-              })
-            ];
-            setDataPerson({sorted});
-          };
+            const sorted = [...this.state.DataPerson]
+            sorted.sort((a, b) =>( b.age > a.age )? 1 : -1)
+            console.log("sorted");
+            setDataPerson({DataPerson,sorted})
+          }
+         
           const handleReverse =()=>{
-            const sortedReverse = [...DataPerson].reverse();
-            setDataPerson(sortedReverse)
+            const sortedReverse = [...this.state.DataPerson]
+            DataPerson.reverse();
+            setDataPerson({DataPerson,sortedReverse})
           }
           return(
         <div>
           <Tables DataPerson={DataPerson} delete={deleteDataPerson}/>
-          <Modal sorted={sortDataPerson} add={addDataPerson} save={saveDataPerson} sortedReverse={handleReverse} dataperson={editDataPerson} />
+          <Modal sorted={sortDataPerson} add={addDataPerson} save={saveDataPerson} sortedReverse={handleReverse} dataperson={editDataPerson}
+           />
+           <button className="actionBtn" onClick={() => this.sortDataPerson}>sort by age</button>
         </div>
          );
          

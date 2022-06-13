@@ -22,10 +22,7 @@ function Tables(props) {
               <td>{item.age}</td>
               <td>
                 <button className="actionBtn"
-                  onClick={() => {
-                    props.delete(item);
-                  }}
-                >
+                  onClick={() => {props.delete(item);}}>
                   Delete
                 </button>
               </td>
