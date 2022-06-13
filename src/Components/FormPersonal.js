@@ -1,4 +1,6 @@
 import React from "react";
+//import PropTypes from 'prop-types';
+
 import '../Components/Form.css';
 
 class idGenerator {
@@ -37,12 +39,12 @@ export default class Modal extends React.Component {
     this.setState({ isOpen: false, item:{ firstName:'', surname:'', age:' ', gender:''} });
   }
   handleSort=()=>{
-    this.props.sorted(this.state.item)
-    this.setState(this.steta.item)
+    this.props.sorted(this.item)
+    this.setState(this.props.sorted)
   }
   handleReverse=()=>{
-    this.props.sortedReverse(this.state.item)
-    this.setState(this.state.item)
+    this.props.sortedReverse(this.props.item)
+    this.setState(this.props.item)
   }
   handleChangeFirstName=(event)=>{
     this.setState({item: {...this.state.item, firstName: event.target.value}});
@@ -56,6 +58,7 @@ export default class Modal extends React.Component {
     handleChangeAge=(event)=>{
     this.setState({item: {...this.state.item,age:event.target.value}});
     }
+    //<button className="actionBtn"onClick={() => this.handleSort}>sort by age</button>
   render() {
     console.log('sorted', this.props.sorted)
     console.log('item', this.state.item)
@@ -64,7 +67,7 @@ export default class Modal extends React.Component {
       <React.Fragment>
       <div className="conteinerBtn">
       <button className="actionBtn"onClick={() => this.setState({ isOpen: true })}>Add Person</button>
-      <button className="actionBtn"onClick={() => this.handleSort}>sort by age</button>
+      
       <button className="actionBtn"onClick={() => this.handleReverse}>Reverse</button>
     </div>
       {this.state.isOpen && (
