@@ -20,10 +20,10 @@ class FotoComments extends React.Component{
 		return (
 			<div>	
 			<form  onSubmit={this.addComment}>
-				<textarea value={this.state.comment}	onChange={this.handleChange}/>
-				<input type="submit" className='actionBtn'/>
+			<textarea value={this.state.comment}	onChange={this.handleChange}/>
+			<input type="submit" className='actionBtn'/>
 			</form>
-		   <ul>
+		         <ul>
 			 {this.state.comments.slice(0,1).map((item, index) => {return <li key={index}>{item}</li>})}
 			</ul>
 		</div>
