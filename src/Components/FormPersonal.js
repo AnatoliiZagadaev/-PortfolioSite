@@ -39,12 +39,12 @@ export default class Modal extends React.Component {
     this.setState({ isOpen: false, item:{ firstName:'', surname:'', age:' ', gender:''} });
   }
   handleSort=()=>{
-    this.props.sorted(this.item)
-    this.setState(this.props.sorted)
+    this.props.sorted(this.state.item)
+    this.setState(this.state.sorted)
   }
   handleReverse=()=>{
-    this.props.sortedReverse(this.props.item)
-    this.setState(this.props.item)
+    this.props.sortedReverse(this.state.item)
+    this.setState(this.state.item)
   }
   handleChangeFirstName=(event)=>{
     this.setState({item: {...this.state.item, firstName: event.target.value}});
