@@ -51,7 +51,7 @@ export default class FotoCommentsLifeCycle extends Component {
     return (
       <div>
         <textarea name="comment" value={comment} onChange={this.handleChange} />
-        <button onClick={this.addComment}>Add Comment</button>
+        <button onClick = {this.addComment} > Add Comment</button>
         {comments.map((comment) => (
           <div key={comment.id}>
             {comment.id}

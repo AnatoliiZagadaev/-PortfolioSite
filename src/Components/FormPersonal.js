@@ -78,7 +78,7 @@ class Modal extends React.Component {
     this.setState({ item: { ...this.state.item, age: event.target.value } });
   };
 
-  // <button className="actionBtn"onClick={() => this.handleSort}>sort by age</button>
+
   render() {
     console.log('sorted', this.props.sorted);
     console.log('item', this.state.item);
@@ -142,4 +142,5 @@ class Modal extends React.Component {
     );
   }
 }
+
 export default Modal;
