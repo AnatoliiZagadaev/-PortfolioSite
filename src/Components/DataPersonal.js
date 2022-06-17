@@ -18,31 +18,24 @@ function DataPersonl() {
       gender: 'male',
       id: 2
     },
-    {
-              
+    {         
       firstName: 'Анатолій',
       surname: 'Загадаєв', 
       age: '30 ',
       gender: 'male',
       id: 3
     }
-  ]);
-        
+  ]);  
   // DataPerson.sort((a, b) => (a.age > b.age) ? 1 : -1)
   // DataPerson.reverse()
   console.log(DataPerson);
-        
   const [editDataPerson] = useState(null);
-
   function deleteDataPerson(dataperson) {
     setDataPerson(DataPerson.filter((p) => p !== dataperson));
-  }
-        
+  }    
   const addDataPerson = (dataperson) => {
-    // setDataPerson([...DataPerson, dataperson]);
     setDataPerson((prevDataPerson) => ([...prevDataPerson, dataperson]));
-  };
-        
+  };    
   const saveDataPerson = (dataperson) => {
     setDataPerson(
       DataPerson.reduce((acc, p) => {
@@ -53,14 +46,13 @@ function DataPersonl() {
     );
   };
   const sortDataPerson = () => {
-    const sorted = [...this.state.DataPerson];
+    const sorted = [...DataPerson];
     sorted.sort((a, b) => ((b.age > a.age) ? 1 : -1));
     console.log('sorted');
     setDataPerson({ DataPerson, sorted });
   };
-         
   const handleReverse = () => {
-    const sortedReverse = [...this.state.DataPerson];
+    const sortedReverse = [...DataPerson];
     DataPerson.reverse();
     setDataPerson({ DataPerson, sortedReverse });
   };

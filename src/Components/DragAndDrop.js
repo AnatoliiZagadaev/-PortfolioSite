@@ -1,3 +1,5 @@
+/* eslint-disable func-names */
+/* eslint-disable no-console */
 import React from 'react';
 import ReactDragList from 'react-drag-list';
 
@@ -17,22 +19,24 @@ const dataArray = [
   }
 ];
 
-
 export default class DragAndDrop extends React.Component {
-  state = {
-    dataSource: dataArray
-  };
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataSource: dataArray
+    };
+  }
+  
   handleUpdate = function (event, updated) {
     console.log(event);
     console.log(updated);
   };
 
   render() {
+    const { dataSource } = this.state;
     return (
       <ReactDragList
-        // eslint-disable-next-line react/destructuring-assignment
-        dataSource={this.state.dataSource}
+        dataSource={dataSource}
         rowKey="list"
         row={(record, index) => (
           <ul key={index}>

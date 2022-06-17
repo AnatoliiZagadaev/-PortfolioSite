@@ -1,3 +1,5 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable max-classes-per-file */
 import React from 'react';
 
 class idGenerator {
@@ -20,11 +22,12 @@ class Modal extends React.Component {
   }
 
   componentDidUpdate(prevProp) {
-    if (prevProp.person !== this.props.person) {
+    const { person } = this.props;
+    if (prevProp.person !== person) {
       this.setState({
-        isOpen: !!this.props.person,
-        item: this.props.person
-          ? { ...this.props.person }
+        isOpen: !!person,
+        item: person
+          ? { ...person }
           : {
             firstName: '', surname: '', age: ' ', gender: '' 
           }
@@ -33,8 +36,9 @@ class Modal extends React.Component {
   }
 
   addHandler = () => {
-    this.props.add({ ...this.state.item, id: idGenerator.next() });
-    this.setState({
+    const { item } = this.state;
+    this.props.add({ ...item, id: idGenerator.next() });
+    this.setState({ 
       isOpen: false,
       item: {
         firstName: '', surname: '', age: ' ', gender: '' 
@@ -43,7 +47,8 @@ class Modal extends React.Component {
   };
 
   saveHandler = () => {
-    this.props.save(this.state.item);
+    const { item } = this.state;
+    this.props.save(item);
     this.setState({
       isOpen: false,
       item: {
@@ -53,44 +58,50 @@ class Modal extends React.Component {
   };
 
   handleSort = () => {
-    this.props.sorted(this.item);
-    this.setState(this.props.sorted);
+    const { item } = this.state;
+    this.props.sorted(item);
+    this.setState(item);
   };
 
   handleReverse = () => {
-    this.props.sortedReverse(this.props.item);
-    this.setState(this.props.item);
+    const { item } = this.state;
+    this.props.sortedReverse(item);
+    this.setState(item);
   };
 
   handleChangeFirstName = (event) => {
-    this.setState({ item: { ...this.state.item, firstName: event.target.value } });
+    const { item } = this.state;
+    this.setState({ item: { ...item, firstName: event.target.value } });
   };
 
   handleChangeSurenane = (event) => {
-    this.setState({ item: { ...this.state.item, surname: event.target.value } });
+    const { item } = this.state;
+    this.setState({ item: { ...item, surname: event.target.value } });
   };
 
   handleChangeGender = (event) => {
-    this.setState({ item: { ...this.state.item, gender: event.target.value } });
+    const { item } = this.state;
+    this.setState({ item: { ...item, gender: event.target.value } });
   };
 
   handleChangeAge = (event) => {
-    this.setState({ item: { ...this.state.item, age: event.target.value } });
+    const { item } = this.state;
+    this.setState({ item: { ...item, age: event.target.value } });
   };
 
-
   render() {
-    console.log('sorted', this.props.sorted);
-    console.log('item', this.state.item);
-    console.log('person', this.person);
+    const { item } = this.state;
+    const { isOpen } = this.state;
+   
     return (
       <>
         <div className="conteinerBtn">
           <button className="actionBtn" onClick={() => this.setState({ isOpen: true })}>Add Person</button>
       
           <button className="actionBtn" onClick={() => this.handleReverse}>Reverse</button>
+        
         </div>
-        {this.state.isOpen && (
+        { isOpen && (
         <section>      
           <span className="containerForm">
             <header id="Personal details"><h2>Personal details</h2></header>
@@ -98,7 +109,7 @@ class Modal extends React.Component {
               <input
                 ref={this.nameInput}
                 onChange={this.handleChangeFirstName}
-                value={this.state.item.firstName}
+                value={item.firstName}
                 type="text"
                 id="firstname"
                 name="firstname"
@@ -106,7 +117,7 @@ class Modal extends React.Component {
               <input
                 ref={this.sunameInput}
                 onChange={this.handleChangeSurenane}
-                value={this.state.item.surname}
+                value={item.surname}
                 type="text"
                 id="surname"
                 name="surname"
@@ -114,7 +125,7 @@ class Modal extends React.Component {
               <br />
             </span>
             <span className="wrapper">
-              <select ref={this.genderInput} value={this.state.item.gender} onChange={this.handleChangeGender} id="gender">
+              <select ref={this.genderInput} value={item.gender} onChange={this.handleChangeGender} id="gender">
                 <option>--Gender--</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
@@ -122,17 +133,17 @@ class Modal extends React.Component {
               <input
                 ref={this.ageInput}
                 type="number"
-                value={this.state.item.age}
+                value={item.age}
                 id="birthdate"
                 name="birthdate"
                 placeholder="Age"
                 onChange={this.handleChangeAge}
               />
             </span>
-            {!this.state.item.id && (
+            {!item.id && (
             <button className="actionBtn" onClick={this.addHandler}>Add</button>
             )}
-            {this.state.item.id && (
+            {item.id && (
             <button className="actionBtn" onClick={this.saveHandler}>Add</button>
             )}
           </span>
