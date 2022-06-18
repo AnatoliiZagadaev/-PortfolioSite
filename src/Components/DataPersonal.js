@@ -70,4 +70,5 @@ function DataPersonl() {
     </div>
   );
 }
+
 export default DataPersonl;

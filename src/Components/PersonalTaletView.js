@@ -2,7 +2,7 @@ import React from 'react';
 import '../Peges/Personal';
 import './Form.css';
 
-function Tables(props) {
+function Tables (props) {
   return (
     <div>
       <table> 
