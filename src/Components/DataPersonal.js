@@ -28,7 +28,7 @@ function DataPersonl() {
   ]);  
   // DataPerson.sort((a, b) => (a.age > b.age) ? 1 : -1)
   // DataPerson.reverse()
-  console.log(DataPerson);
+  // console.log(DataPerson);
   const [editDataPerson] = useState(null);
   function deleteDataPerson(dataperson) {
     setDataPerson(DataPerson.filter((p) => p !== dataperson));
@@ -48,7 +48,7 @@ function DataPersonl() {
   const sortDataPerson = () => {
     const sorted = [...DataPerson];
     sorted.sort((a, b) => ((b.age > a.age) ? 1 : -1));
-    console.log('sorted');
+    // console.log('sorted');
     setDataPerson({ DataPerson, sorted });
   };
   const handleReverse = () => {
@@ -66,9 +66,7 @@ function DataPersonl() {
         sortedReverse={handleReverse}
         dataperson={editDataPerson}
       />
-      <button className="actionBtn" onClick={() => this.sortDataPerson}>sort by age</button>
     </div>
   );
 }
-
 export default DataPersonl;

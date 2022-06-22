@@ -25,7 +25,6 @@ function Tables(props) {
               <td>{eye_color}</td>
             </tr>
           ))}
-          ;
         </tbody>
       </table>
     </div>

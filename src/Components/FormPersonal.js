@@ -97,7 +97,7 @@ class Modal extends React.Component {
       <>
         <div className="conteinerBtn">
           <button className="actionBtn" onClick={() => this.setState({ isOpen: true })}>Add Person</button>
-      
+          <button className="actionBtn" onClick={() => this.sortDataPerson}>sort by age</button>
           <button className="actionBtn" onClick={() => this.handleReverse}>Reverse</button>
         
         </div>
