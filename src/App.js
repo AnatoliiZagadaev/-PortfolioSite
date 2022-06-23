@@ -6,13 +6,13 @@ import {
   Routes,
 } from 'react-router-dom';
 import { useContext } from 'react';
-import About from './Peges/About';
-import Portfolio from './Peges/Portfolio';
-import Instagramm from './Peges/Instagramm';
-import Footer from './Components/Footer';
-import Header from './Components/Header';
-import Personal from './Peges/Personal';
-import Starswar from './Components/StarWors';
+import About from './peges/About';
+import Portfolio from './peges/Portfolio';
+import Instagramm from './peges/Instagramm';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import Personal from './peges/Personal';
+import Starswar from './components/StarWors';
 import { ThemeContext } from './contexts/ThemeContext';
 /* eslint-disable linebreak-style */
 function App() {

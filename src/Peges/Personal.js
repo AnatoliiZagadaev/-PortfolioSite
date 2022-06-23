@@ -1,5 +1,5 @@
-import React from "react";
-import DataPersonl from '../Components/DataPersonal'
+import React from 'react';
+import DataPersonl from '../components/DataPersonal';
 
 function Personal(){
  

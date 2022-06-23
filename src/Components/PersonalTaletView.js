@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Peges/Personal';
+import '../peges/Personal';
 import './Form.css';
 
 function Tables (props) {

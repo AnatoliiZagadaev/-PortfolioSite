@@ -1,9 +1,9 @@
 
 import React, { Component } from 'react';
 import Photographer from '../image/Photographer.png';
-import FocusArrow from '../Components/OnFocusArrow';
-import DragAndDrop from '../Components/DragAndDrop';
-import LoadAndError from '../Components/LoadAndError';
+import FocusArrow from '../components/OnFocusArrow';
+import DragAndDrop from '../components/DragAndDrop';
+import LoadAndError from '../components/LoadAndError';
 
 export default class About extends Component {
     render(){
