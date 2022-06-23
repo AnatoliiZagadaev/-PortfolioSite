@@ -27,7 +27,7 @@ class FotoComments extends React.Component {
           <input type="submit" className="actionBtn"/>
         </form>
         <ul>
-          {comments.slice(0, 1).map((item, index) => { return <li key={index}>{item}</li>; })}
+          {comments.slice(0, 1).map((item, id) => { return <li key={id}>{item}</li>; })}
         </ul>
       </div>
     );
