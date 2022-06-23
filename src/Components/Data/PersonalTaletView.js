@@ -1,6 +1,4 @@
 import React from 'react';
-import '../peges/Personal';
-import './Form.css';
 
 function Tables (props) {
   return (

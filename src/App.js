@@ -12,7 +12,7 @@ import Instagramm from './peges/Instagramm';
 import Footer from './layout/Footer';
 import Header from './layout/Header';
 import Personal from './peges/Personal';
-import Starswar from './components/StarWors';
+import Starswar from './components/StarWors/StarWors';
 import { ThemeContext } from './contexts/ThemeContext';
 /* eslint-disable linebreak-style */
 function App() {

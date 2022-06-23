@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Tables from './PersonalTaletView';
-import Modal from './FormPersonal';
+import Tables from '../Data/PersonalTaletView';
+import Modal from '../Data/FormPersonal';
 
 function DataPersonl() {
   const [DataPerson, setDataPerson] = useState([

@@ -1,6 +1,5 @@
 import React from 'react';
-import './Form.css';
-import logProps from '../hoc/log-props';
+
 
 class FotoComments extends React.Component {
   constructor(props) {

@@ -6,8 +6,8 @@ import dungeon from '../assets/image/3.jpg';
 import bigCity from '../assets/image/4.jpg';
 import oceanBeach from '../assets/image/5.jpg';
 import nationalPark from '../assets/image/7.jpg';
-import FotoComments from '../components/FotoComents';
-import FotoCommentsLifeCycle from '../components/FotoCommentsLifeCycle';
+import FotoComments from '../components/Comment/FotoComents';
+import FotoCommentsLifeCycle from '../components/Comment/FotoCommentsLifeCycle';
 
 
 export default class Portfolio extends Component {
