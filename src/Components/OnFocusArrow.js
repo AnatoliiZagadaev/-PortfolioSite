@@ -12,11 +12,11 @@ export default class FocusArrow extends React.Component {
 
   moveFocus() {
     const node = this.myRef.current;
-    const activeMove = document.getElementsByClassName('activeMove');
-    const actives = document.getElementsByClassName('active');
-
+    
     node.addEventListener('keydown', (event) => {
       const active = document.activeElement;
+      const actives = document.activeElement;
+      const activeMove = document.activeElement;
       if (event.keyCode === 40 && active.nextSibling) {
         active.nextSibling.focus();
       }
