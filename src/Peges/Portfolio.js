@@ -1,11 +1,11 @@
 
 import React, { Component } from 'react';
-import autumnForest from '../image/1.jpg';
-import duckOnTheWater from '../image/2.jpg';
-import dungeon from '../image/3.jpg';
-import bigCity from '../image/4.jpg';
-import oceanBeach from '../image/5.jpg';
-import nationalPark from '../image/7.jpg';
+import autumnForest from '../assets/image/1.jpg';
+import duckOnTheWater from '../assets/image/2.jpg';
+import dungeon from '../assets/image/3.jpg';
+import bigCity from '../assets/image/4.jpg';
+import oceanBeach from '../assets/image/5.jpg';
+import nationalPark from '../assets/image/7.jpg';
 import FotoComments from '../components/FotoComents';
 import FotoCommentsLifeCycle from '../components/FotoCommentsLifeCycle';
 

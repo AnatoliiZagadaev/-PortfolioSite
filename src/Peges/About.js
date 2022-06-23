@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import Photographer from '../image/Photographer.png';
+import Photographer from '../assets/image/Photographer.png';
 import FocusArrow from '../components/OnFocusArrow';
 import DragAndDrop from '../components/DragAndDrop';
 import LoadAndError from '../components/LoadAndError';

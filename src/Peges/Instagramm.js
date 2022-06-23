@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import tangerineAndChocolate from '../image/8.jpg';
-import manOnTheStone from '../image/9.jpg';
-import youngGirl from '../image/11.jpg';
-import pieceOfPie from '../image/12.jpg';
-import theTablet from '../image/13.jpg';
-import volleyball from '../image/14.jpg';
-import search from '../image/154836.png';
+import tangerineAndChocolate from '../assets/image/8.jpg';
+import manOnTheStone from '../assets/image/9.jpg';
+import youngGirl from '../assets/image/11.jpg';
+import pieceOfPie from '../assets/image/12.jpg';
+import theTablet from '../assets/image/13.jpg';
+import volleyball from '../assets/image/14.jpg';
+import search from '../assets/image/154836.png';
 
 export default class Instagramm extends Component {
     render(){
