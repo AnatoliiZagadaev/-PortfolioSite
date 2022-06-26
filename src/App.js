@@ -1,26 +1,24 @@
-import React from 'react';
+import { React, useContext } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,   
   Route,
   Routes,
 } from 'react-router-dom';
-import { useContext } from 'react';
-import About from './Peges/About';
-import Portfolio from './Peges/Portfolio';
-import Instagramm from './Peges/Instagramm';
-import Footer from './Components/Footer';
-import Header from './Components/Header';
-import Personal from './Peges/Personal';
-import Starswar from './Components/StarWors';
+import About from './peges/About';
+import Portfolio from './peges/Portfolio';
+import Instagramm from './peges/Instagramm';
+import Footer from './layout/Footer';
+import Header from './layout/Header';
+import Personal from './peges/Personal';
+import Starswar from './components/Star_Wors/StarWors';
 import { ThemeContext } from './contexts/ThemeContext';
 /* eslint-disable linebreak-style */
 function App() {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   return (
-    <>
     <div className={darkMode ? 'dark-mode' : 'light-mode'}>
-        <Header setDarkMode={setDarkMode} darkMode={darkMode} />
+      <Header setDarkMode={setDarkMode} darkMode={darkMode} />
       <About />
       <Portfolio />
       <Instagramm />
@@ -34,8 +32,7 @@ function App() {
         </Routes>
       </Router>
       <Footer />
-      </div>
-    </>
+    </div>
   );
 }
 

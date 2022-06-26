@@ -1,5 +1,3 @@
-/* eslint-disable func-names */
-/* eslint-disable no-console */
 import React from 'react';
 import ReactDragList from 'react-drag-list';
 
@@ -27,7 +25,7 @@ export default class DragAndDrop extends React.Component {
     };
   }
   
-  handleUpdate = function (event, updated) {
+  handleUpdate = (event, updated) => {
     console.log(event);
     console.log(updated);
   };

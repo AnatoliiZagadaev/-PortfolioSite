@@ -1,15 +1,13 @@
-import React from "react";
-import DataPersonl from '../Components/DataPersonal'
+import React from 'react';
+import DataPersonl from '../components/Data/DataPersonal';
 
-function Personal(){
- 
+function Personal() {
   return (
     <section>
       <h1>Data Person</h1>
-      <DataPersonl/>
+      <DataPersonl />
     </section>
   );
 }
-
 
 export default Personal;

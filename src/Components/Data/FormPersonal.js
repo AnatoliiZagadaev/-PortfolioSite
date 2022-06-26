@@ -1,15 +1,14 @@
-/* eslint-disable no-plusplus */
-/* eslint-disable max-classes-per-file */
+// eslint-disable-next-line max-classes-per-file
 import React from 'react';
-
+/* eslint linebreak-style: ["error", "windows"] */
 class idGenerator {
   static id = 3;
 
   static next() {
-    return ++this.id;
+    this.id = 0;
+    return this.id;
   }
 }
-
 class Modal extends React.Component {
   constructor(props) {
     super(props);
@@ -37,7 +36,8 @@ class Modal extends React.Component {
 
   addHandler = () => {
     const { item } = this.state;
-    this.props.add({ ...item, id: idGenerator.next() });
+    const { add } = this.props;
+    add({ ...item, id: idGenerator.next() });
     this.setState({ 
       isOpen: false,
       item: {
@@ -48,7 +48,8 @@ class Modal extends React.Component {
 
   saveHandler = () => {
     const { item } = this.state;
-    this.props.save(item);
+    const { save } = this.props;
+    save(item);
     this.setState({
       isOpen: false,
       item: {

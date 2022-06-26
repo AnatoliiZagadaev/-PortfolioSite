@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect } from 'react';
 
 export const ThemeContext = createContext();
 
-const ThemeContextProvider = (props) => {
+function ThemeContextProvider(props) {
   const [darkMode, setDarkMode] = useState(getInitialMode);
 
   useEffect(() => {
@@ -16,11 +16,10 @@ const ThemeContextProvider = (props) => {
     const userPrefersDark = getPrefColourScheme();
     if (isReturningUser) {
       return savedMode;
-    } else if (userPrefersDark) {
+    } if (userPrefersDark) {
       return true;
-    } else {
-      return false;
-    }
+    } 
+    return false;
   }
 
   function getPrefColourScheme() {
@@ -33,5 +32,5 @@ const ThemeContextProvider = (props) => {
       {props.children}
     </ThemeContext.Provider>
   );
-};
+}
 export default ThemeContextProvider;

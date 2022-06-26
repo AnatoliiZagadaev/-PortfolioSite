@@ -1,7 +1,5 @@
 import React from 'react';
-import './Form.css';
-import logProps from '../hoc/log-props';
-
+/* eslint linebreak-style: ["error", "windows"] */
 class FotoComments extends React.Component {
   constructor(props) {
     super(props);
@@ -21,17 +19,17 @@ class FotoComments extends React.Component {
     const { comment } = this.state;
     const { comments } = this.state;
     return (
-      <div>	
+      <div>
         <form onSubmit={this.addComment}>
           <textarea value={comment} onChange={this.handleChange} />
-          <input type="submit" className="actionBtn"/>
+          <input type="submit" className="actionBtn" />
         </form>
         <ul>
-          {comments.slice(0, 1).map((item, index) => { return <li key={index}>{item}</li>; })}
+          {comments.slice(0, 1).map((item) => { return <li key={item.id}>{item}</li>; })}
         </ul>
       </div>
     );
   }
 }
 
-export default logProps(FotoComments);
+export default FotoComments;

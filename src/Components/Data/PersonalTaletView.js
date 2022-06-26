@@ -1,8 +1,9 @@
 import React from 'react';
-import '../Peges/Personal';
+
 import './Form.css';
 
-function Tables (props) {
+function Tables(props) {
+  const { DataPerson } = props;
   return (
     <div>
       <table> 
@@ -14,7 +15,7 @@ function Tables (props) {
             <td>Age</td>
             <td>Delete</td>
           </tr>
-          {props.DataPerson.map((item) => (
+          {DataPerson.map((item) => (
             <tr key={item.id}>
               <td>
                 {item.firstName}
@@ -27,7 +28,10 @@ function Tables (props) {
               <td>
                 <button
                   className="actionBtn"
-                  onClick={() => { props.delete(item); }}> Delete
+                  onClick={() => { props.delete(item); }}
+                >
+                  {' '}
+                  Delete
                 </button>
               </td>
             </tr>
@@ -37,4 +41,5 @@ function Tables (props) {
     </div>
   );
 }
+
 export default Tables;

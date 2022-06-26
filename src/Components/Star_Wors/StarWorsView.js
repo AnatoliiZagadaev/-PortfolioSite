@@ -2,6 +2,7 @@ import React from 'react';
 import './StarWors';
 
 function Tables(props) {
+  const { Starswars } = props;
   return (
     <div>
       <h1>The Star Wars Person</h1>
@@ -12,7 +13,7 @@ function Tables(props) {
             <td>Height</td>
             <td>Eye color</td>
           </tr>
-          {props.Starswars.map(({ name, height, eye_color }) => (
+          {Starswars.map(({ name, height, eye_color }) => (
             <tr key={name}>
               <td>
                 {name}

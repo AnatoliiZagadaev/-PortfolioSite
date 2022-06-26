@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Tables from './PersonalTaletView';
 import Modal from './FormPersonal';
-
+/* eslint linebreak-style: ["error", "windows"] */
 function DataPersonl() {
   const [DataPerson, setDataPerson] = useState([
     {
