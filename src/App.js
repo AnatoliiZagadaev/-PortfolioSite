@@ -1,4 +1,5 @@
 import { React, useContext } from 'react';
+/* eslint linebreak-style: ["error", "windows"] */
 import './App.css';
 import {
   BrowserRouter as Router,   

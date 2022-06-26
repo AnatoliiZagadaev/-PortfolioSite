@@ -1,6 +1,6 @@
 import React from 'react';
 import Tables from './StarWorsView';
-
+/* eslint linebreak-style: ["error", "windows"] */
 export default class Starswar extends React.Component {
   constructor(props) {
     super(props);

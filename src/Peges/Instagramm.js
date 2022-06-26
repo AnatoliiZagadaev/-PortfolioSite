@@ -1,4 +1,5 @@
 import React from 'react';
+/* eslint linebreak-style: ["error", "windows"] */
 import tangerineAndChocolate from '../assets/image/8.jpg';
 import manOnTheStone from '../assets/image/9.jpg';
 import youngGirl from '../assets/image/11.jpg';

@@ -1,4 +1,5 @@
 import React from 'react';
+/* eslint linebreak-style: ["error", "windows"] */
 import Photographer from '../assets/image/Photographer.png';
 import FocusArrow from '../components/OnFocusArrow';
 import DragAndDrop from '../components/DragAndDrop';

@@ -1,6 +1,6 @@
 import React from 'react';
-//import Photographer from '../image/Photographer.png';
-
+// import Photographer from '../image/Photographer.png';
+/* eslint linebreak-style: ["error", "windows"] */
 export default class LoadAndError extends React.Component {
   constructor(props) {
     super(props);
@@ -14,7 +14,6 @@ export default class LoadAndError extends React.Component {
   handleImageErrored() {
     this.setState({ imageStatus: 'failed to load' });
   }
-  
 
   render() {
     const { imageStatus } = this.state;
@@ -25,7 +24,7 @@ export default class LoadAndError extends React.Component {
           src={Photographer}
           onLoad={() => this.handleImageLoaded}
           onError={() => this.handleImageErrored}
-          alt={'Photographer'}
+          alt="Photographer"
         />
         {imageStatus}
       </div>

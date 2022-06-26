@@ -1,9 +1,10 @@
 import React from 'react';
-
+/* eslint linebreak-style: ["error", "windows"] */
 import './Form.css';
 
 function Tables(props) {
   const { DataPerson } = props;
+  const { deleteP } = props;
   return (
     <div>
       <table> 
@@ -28,7 +29,7 @@ function Tables(props) {
               <td>
                 <button
                   className="actionBtn"
-                  onClick={() => { props.delete(item); }}
+                  onClick={() => { deleteP(item); }}
                 >
                   {' '}
                   Delete

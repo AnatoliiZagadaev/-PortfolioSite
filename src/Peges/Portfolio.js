@@ -1,4 +1,5 @@
 import React from 'react';
+/* eslint linebreak-style: ["error", "windows"] */
 import autumnForest from '../assets/image/1.jpg';
 import duckOnTheWater from '../assets/image/2.jpg';
 import dungeon from '../assets/image/3.jpg';
@@ -14,156 +15,125 @@ function Portfolio() {
       <header id="portfolio"><h1>My Last Works</h1></header>
       <span className="row_gallery">
         <span className="bloc relative">
-          <img src={autumnForest} alt=" Autumn Forest" />
-          <span className="innerBlock absolute"> 
-            <span className="blocChild"> 
-              <h1>Leave a review</h1> 
+          <img src={autumnForest} alt="Autumn forest" />
+          <span className="innerBlock absolute">
+            <span className="blocChild">
+              <h1>Leave a review</h1>
               <FotoComments />
-            </span> 
+            </span>
           </span>
         </span>
         <span className="space" />
         <span className="bloc relative">
           <img src={duckOnTheWater} alt="Duck on the water" />
-          <span className="innerBlock absolute"> 
-            <span className="blocChild"> 
-              <h1>Leave a review</h1> 
-              <FotoComments /> 
-            </span> 
-          </span>
-        </span>
-        <span className="space visible_false" />
-        <span className="bloc relative visible_false">
-          <img src={dungeon} alt="The dungeon" />
-          <span className="innerBlock absolute"> 
-            <span className="blocChild"> 
-              <h1>Leave a review</h1> 
-              <FotoComments /> 
-            </span> 
-          </span>
-        </span>
-      </span>
-      <span className="row_gallery">
-        <span className="bloc relative">
-          <img src={autumnForest} alt="Autumn forest" />
-          <span className="innerBlock absolute"> 
-            <span className="blocChild"> 
-              <h1>Leave a review</h1> 
+          <span className="innerBlock absolute">
+            <span className="blocChild">
+              <h1>Leave a review</h1>
               <FotoComments />
-            </span> 
-          </span>
-        </span>
-        <span className="space" />
-        <span className="bloc relative">
-          <img src={duckOnTheWater} alt="Duck on the water" />
-          <span className="innerBlock absolute"> 
-            <span className="blocChild"> 
-              <h1>Leave a review</h1> 
-              <FotoComments /> 
-            </span> 
+            </span>
           </span>
         </span>
         <span className="space visible_false" />
         <span className="bloc relative visible_false">
           <img src={dungeon} alt="The dungeon" />
-          <span className="innerBlock absolute"> 
-            <span className="blocChild"> 
-              <h1>The dungeon</h1> 
-              <p>Some text that describes the current photo</p> 
-            </span> 
+          <span className="innerBlock absolute">
+            <span className="blocChild">
+              <h1>The dungeon</h1>
+              <p>Some text that describes the current photo</p>
+            </span>
           </span>
         </span>
       </span>
       <span className="row_gallery">
         <span className="bloc relative">
           <img src={autumnForest} alt="Autumn forest" />
-          <span className="innerBlock absolute"> 
-            <span className="blocChild"> 
-              <h1>Autumn forest</h1> 
-              <p>Some text that describes the current photo</p> 
-            </span> 
+          <span className="innerBlock absolute">
+            <span className="blocChild">
+              <h1>Autumn forest</h1>
+              <p>Some text that describes the current photo</p>
+            </span>
           </span>
         </span>
         <span className="space" />
         <span className="bloc relative">
           <img src={duckOnTheWater} alt="Duck on the water" />
-          <span className="innerBlock absolute"> 
-            <span className="blocChild"> 
-              <h1>Duck on the water</h1> 
-              <p>Some text that describes the current photo</p> 
-            </span> 
+          <span className="innerBlock absolute">
+            <span className="blocChild">
+              <h1>Duck on the water</h1>
+              <p>Some text that describes the current photo</p>
+            </span>
           </span>
         </span>
         <span className="space visible_false" />
         <span className="bloc relative visible_false">
           <img src={dungeon} alt="The dungeon" />
-          <span className="innerBlock absolute"> 
-            <span className="blocChild"> 
-              <h1>The dungeon</h1> 
-              <p>Some text that describes the current photo</p> 
-            </span> 
+          <span className="innerBlock absolute">
+            <span className="blocChild">
+              <h1>The dungeon</h1>
+              <p>Some text that describes the current photo</p>
+            </span>
           </span>
         </span>
       </span>
       <span className="row_gallery">
         <span className="bloc relative">
           <img src={autumnForest} alt="Autumn forest" />
-          <span className="innerBlock absolute"> 
-            <span className="blocChild"> 
-              <h1>Autumn forest</h1> 
-              <p>Some text that describes the current photo</p> 
-            </span> 
+          <span className="innerBlock absolute">
+            <span className="blocChild">
+              <h1>Autumn forest</h1>
+              <p>Some text that describes the current photo</p>
+            </span>
           </span>
         </span>
         <span className="space" />
         <span className="bloc relative">
           <img src={duckOnTheWater} alt="Duck on the water" />
-          <span className="innerBlock absolute"> 
-            <span className="blocChild"> 
-              <h1>Duck on the water</h1> 
-              <p>Some text that describes the current photo</p> 
-            </span> 
+          <span className="innerBlock absolute">
+            <span className="blocChild">
+              <h1>Duck on the water</h1>
+              <p>Some text that describes the current photo</p>
+            </span>
           </span>
         </span>
         <span className="space visible_false" />
         <span className="bloc relative visible_false">
           <img src={dungeon} alt="The dungeon" />
-          <span className="innerBlock absolute"> 
-            <span className="blocChild"> 
-              <h1>The dungeon</h1> 
-              <p>Some text that describes the current photo</p> 
-            </span> 
+          <span className="innerBlock absolute">
+            <span className="blocChild">
+              <h1>The dungeon</h1>
+              <p>Some text that describes the current photo</p>
+            </span>
           </span>
         </span>
       </span>
       <span className="row_gallery">
         <span className="bloc relative">
           <img src={bigCity} alt="Big city" />
-          <span className="innerBlock absolute"> 
-            <span className="blocChild"> 
-              <h1>Big city</h1> 
-              <p>Some text that describes the current photo</p> 
-            </span> 
+          <span className="innerBlock absolute">
+            <span className="blocChild">
+              <h1>Big city</h1>
+              <p>Some text that describes the current photo</p>
+            </span>
           </span>
         </span>
         <span className="space visible_false" />
         <span className="bloc relative visible_false" data-descr="Kitchen design">
           <img src={oceanBeach} alt="Ocean beach" />
-          <span className="innerBlock absolute"> 
-            <span className="blocChild"> 
-              <h1>Ocean beach</h1> 
-              <p>Some text that describes the current photo</p> 
-            </span> 
+          <span className="innerBlock absolute">
+            <span className="blocChild">
+              <h1>Ocean beach</h1>
+              <p>Some text that describes the current photo</p>
+            </span>
           </span>
         </span>
       </span>
       <span className="bloc relative visible_false">
         <img src={nationalPark} alt="National Park" />
-        <span className="innerBlock absolute"> 
-          <span className="blocChild"> 
-            <h1>Leave a review</h1> 
-            <FotoCommentsLifeCycle /> 
-          </span> 
+        <span className="innerBlock absolute">
+          <span className="blocChild">
+            <h1>Leave a review</h1>
+            <FotoCommentsLifeCycle />
+          </span>
         </span>
       </span>
     </section>

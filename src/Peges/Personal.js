@@ -1,4 +1,5 @@
 import React from 'react';
+/* eslint linebreak-style: ["error", "windows"] */
 import DataPersonl from '../components/Data/DataPersonal';
 
 function Personal() {

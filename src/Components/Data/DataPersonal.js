@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import Tables from './PersonalTaletView';
-import Modal from './FormPersonal';
+import Tables from '../Data/PersonalTaletView';
+import Modal from '../Data/FormPersonal';
 /* eslint linebreak-style: ["error", "windows"] */
+
 function DataPersonl() {
   const [DataPerson, setDataPerson] = useState([
     {
@@ -58,7 +59,7 @@ function DataPersonl() {
   };
   return (
     <div>
-      <Tables DataPerson={DataPerson} delete={deleteDataPerson} />
+      <Tables DataPerson={DataPerson} deleteP={deleteDataPerson} />
       <Modal
         sorted={sortDataPerson}
         add={addDataPerson}
