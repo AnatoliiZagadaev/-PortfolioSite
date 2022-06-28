@@ -1,28 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+/* eslint linebreak-style: ["error", "unix"] */
 import Tables from './StarWorsView';
-/* eslint linebreak-style: ["error", "windows"] */
-export default class Starswar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      Starswars: []
-    };
-  }
 
-  componentDidMount() {
-    this.getData();
-  }
-
-  getData = async () => {
+function Starswar() {
+  const [Starswars, setStarswars] = useState([]);
+  
+  const getData = async () => {
     const response = await fetch('https://swapi.dev/api/people/');
     const data = await response.json();
-    this.setState({ Starswars: data.results });
+    setStarswars(data.results);
   };
-
-  render() {
-    const { Starswars } = this.state;
-    return (
+  useEffect(() => {
+    getData();
+  }, []);
+ 
+  return (
+    <div>
       <Tables Starswars={Starswars} />
-    );
-  }       
-}
+    </div>  
+  );
+}       
+export default Starswar;
