@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 /* eslint linebreak-style: ["error", "windows"] */
 import './Form.css';
 
 function Tables(props) {
   const { DataPerson } = props;
-  const { deleteP } = props;
+  const { _deleteP } = props;
   return (
     <div>
       <table> 
@@ -29,7 +30,7 @@ function Tables(props) {
               <td>
                 <button
                   className="actionBtn"
-                  onClick={() => { deleteP(item); }}
+                  onClick={() => { _deleteP(item); }}
                 >
                   {' '}
                   Delete
@@ -42,5 +43,9 @@ function Tables(props) {
     </div>
   );
 }
+Tables.propTypes = {
+  DataPerson: PropTypes.isRequired,
+  _deleteP: PropTypes.isRequired
+};
 
 export default Tables;
