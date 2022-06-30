@@ -1,141 +1,43 @@
 import React from 'react';
 /* eslint linebreak-style: ["error", "windows"] */
-import autumnForest from '../assets/image/1.jpg';
-import duckOnTheWater from '../assets/image/2.jpg';
-import dungeon from '../assets/image/3.jpg';
-import bigCity from '../assets/image/4.jpg';
-import oceanBeach from '../assets/image/5.jpg';
-import nationalPark from '../assets/image/7.jpg';
-import FotoComments from '../components/Comment/FotoComments';
-import FotoCommentsLifeCycle from '../components/Comment/FotoCommentsLifeCycle';
+import AutumnForest from '../components/ImegComponent/AutumnForest';
+import DuckOnTheWater from '../components/ImegComponent/DuckOnTheWater';
+import Dungeon from '../components/ImegComponent/Dungeon';
+import BigCity from '../components/ImegComponent/BigCity';
+import OceanBeach from '../components/ImegComponent/OceanBeach';
+import NationalPark from '../components/ImegComponent/NationalPark';
 
 function Portfolio() {
   return (
     <section>
       <header id="portfolio"><h1>My Last Works</h1></header>
       <span className="row_gallery">
-        <span className="bloc relative">
-          <img src={autumnForest} alt="Autumn forest" />
-          <span className="innerBlock absolute">
-            <span className="blocChild">
-              <h1>Leave a review</h1>
-              <FotoComments />
-            </span>
-          </span>
-        </span>
+        <AutumnForest />
         <span className="space" />
-        <span className="bloc relative">
-          <img src={duckOnTheWater} alt="Duck on the water" />
-          <span className="innerBlock absolute">
-            <span className="blocChild">
-              <h1>Leave a review</h1>
-              <FotoComments />
-            </span>
-          </span>
-        </span>
+        <DuckOnTheWater />
         <span className="space visible_false" />
-        <span className="bloc relative visible_false">
-          <img src={dungeon} alt="The dungeon" />
-          <span className="innerBlock absolute">
-            <span className="blocChild">
-              <h1>The dungeon</h1>
-              <p>Some text that describes the current photo</p>
-            </span>
-          </span>
-        </span>
+        <Dungeon />
       </span>
       <span className="row_gallery">
-        <span className="bloc relative">
-          <img src={autumnForest} alt="Autumn forest" />
-          <span className="innerBlock absolute">
-            <span className="blocChild">
-              <h1>Autumn forest</h1>
-              <p>Some text that describes the current photo</p>
-            </span>
-          </span>
-        </span>
+        <AutumnForest />
         <span className="space" />
-        <span className="bloc relative">
-          <img src={duckOnTheWater} alt="Duck on the water" />
-          <span className="innerBlock absolute">
-            <span className="blocChild">
-              <h1>Duck on the water</h1>
-              <p>Some text that describes the current photo</p>
-            </span>
-          </span>
-        </span>
+        <DuckOnTheWater />
         <span className="space visible_false" />
-        <span className="bloc relative visible_false">
-          <img src={dungeon} alt="The dungeon" />
-          <span className="innerBlock absolute">
-            <span className="blocChild">
-              <h1>The dungeon</h1>
-              <p>Some text that describes the current photo</p>
-            </span>
-          </span>
-        </span>
+        <Dungeon />
       </span>
       <span className="row_gallery">
-        <span className="bloc relative">
-          <img src={autumnForest} alt="Autumn forest" />
-          <span className="innerBlock absolute">
-            <span className="blocChild">
-              <h1>Autumn forest</h1>
-              <p>Some text that describes the current photo</p>
-            </span>
-          </span>
-        </span>
+        <AutumnForest />
         <span className="space" />
-        <span className="bloc relative">
-          <img src={duckOnTheWater} alt="Duck on the water" />
-          <span className="innerBlock absolute">
-            <span className="blocChild">
-              <h1>Duck on the water</h1>
-              <p>Some text that describes the current photo</p>
-            </span>
-          </span>
-        </span>
+        <DuckOnTheWater />
         <span className="space visible_false" />
-        <span className="bloc relative visible_false">
-          <img src={dungeon} alt="The dungeon" />
-          <span className="innerBlock absolute">
-            <span className="blocChild">
-              <h1>The dungeon</h1>
-              <p>Some text that describes the current photo</p>
-            </span>
-          </span>
-        </span>
+        <Dungeon />
       </span>
       <span className="row_gallery">
-        <span className="bloc relative">
-          <img src={bigCity} alt="Big city" />
-          <span className="innerBlock absolute">
-            <span className="blocChild">
-              <h1>Big city</h1>
-              <p>Some text that describes the current photo</p>
-            </span>
-          </span>
-        </span>
+        <BigCity />
         <span className="space visible_false" />
-        <span className="bloc relative visible_false" data-descr="Kitchen design">
-          <img src={oceanBeach} alt="Ocean beach" />
-          <span className="innerBlock absolute">
-            <span className="blocChild">
-              <h1>Ocean beach</h1>
-              <p>Some text that describes the current photo</p>
-            </span>
-          </span>
-        </span>
+        <OceanBeach />
       </span>
-      <span className="bloc relative visible_false">
-        <img src={nationalPark} alt="National Park" />
-        <span className="innerBlock absolute">
-          <span className="blocChild">
-            <h1>Leave a review</h1>
-            <FotoCommentsLifeCycle />
-          </span>
-        </span>
-      </span>
+      <NationalPark />
     </section>
   ); 
 }
