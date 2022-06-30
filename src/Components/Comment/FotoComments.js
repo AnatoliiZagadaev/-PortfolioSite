@@ -1,5 +1,6 @@
 import React from 'react';
 /* eslint linebreak-style: ["error", "windows"] */
+import logProps from '../../hoc/log-props';
 
 class FotoComments extends React.Component {
   constructor(props) {
@@ -33,4 +34,4 @@ class FotoComments extends React.Component {
   }
 }
 
-export default FotoComments;
+export default logProps(FotoComments);
