@@ -1,5 +1,4 @@
 import React from 'react';
-/* eslint linebreak-style: ["error", "windows"] */
 import PropTypes from 'prop-types';
 import './Header.css';
 

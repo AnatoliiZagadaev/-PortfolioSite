@@ -1,5 +1,4 @@
 import React from 'react';
-/* eslint linebreak-style: ["error", "windows"] */
 
 function logProps(WrappedComponent) {
   class LogProps extends React.Component {

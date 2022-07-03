@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-/* eslint linebreak-style: ["error", "windows"] */
+
 class FotoCommentsLifeCycle extends Component {
   constructor(props) {
     super(props);
@@ -44,26 +44,25 @@ class FotoCommentsLifeCycle extends Component {
       [event.target.name]: event.target.value,
     });
   };
-
+  
   render() {
-    const { comment } = this.state;
-    const { comments } = this.state;
+    
+    const { comment, comments } = this.state;
     return (
       <div>
         <textarea name="comment" value={comment} onChange={this.handleChange} />
         <button onClick={this.addComment}> Add Comment</button>
-        {comments.map((comment) => {
-          return (
-            <div key={comment.id}>
-              {comment.id}
-              .
-              {comment.comment}
-              <button onClick={() => this.removeComment(comment.id)}>Remove Comment</button>
-            </div>
-          );
-        })}
+        {comments.map((comment) => (
+          <div key={comment.id}>
+            {comment.id}
+            .
+            {comment.comment}
+            <button onClick={() => this.removeComment(comment.id)}>Remove Comment</button>
+          </div>
+        ))}
       </div>
     );
   }
 }
+
 export default FotoCommentsLifeCycle;

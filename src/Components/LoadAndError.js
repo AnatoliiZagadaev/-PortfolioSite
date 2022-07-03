@@ -1,6 +1,5 @@
 import React from 'react';
 // import Photographer from '../image/Photographer.png';
-/* eslint linebreak-style: ["error", "windows"] */
 export default class LoadAndError extends React.Component {
   constructor(props) {
     super(props);
@@ -16,8 +15,7 @@ export default class LoadAndError extends React.Component {
   }
 
   render() {
-    const { imageStatus } = this.state;
-    const { Photographer } = this.state;
+    const { imageStatus, Photographer } = this.state;
     return (
       <div>
         <img

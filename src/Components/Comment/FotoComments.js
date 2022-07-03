@@ -1,5 +1,4 @@
 import React from 'react';
-/* eslint linebreak-style: ["error", "windows"] */
 import logProps from '../../hoc/log-props';
 
 class FotoComments extends React.Component {
@@ -18,8 +17,7 @@ class FotoComments extends React.Component {
   };
 
   render() {
-    const { comment } = this.state;
-    const { comments } = this.state;
+    const { comment, comments } = this.state;
     return (
       <div>
         <form onSubmit={this.addComment}>

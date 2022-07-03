@@ -1,6 +1,7 @@
 // eslint-disable-next-line max-classes-per-file
 import React from 'react';
-/* eslint linebreak-style: ["error", "windows"] */
+import PropTypes from 'prop-types';
+
 class idGenerator {
   static id = 3;
 
@@ -91,8 +92,7 @@ class Modal extends React.Component {
   };
 
   render() {
-    const { item } = this.state;
-    const { isOpen } = this.state;
+    const { item, isOpen } = this.state;
    
     return (
       <>
@@ -154,5 +154,11 @@ class Modal extends React.Component {
     );
   }
 }
+Modal.propTypes = {
+  person: PropTypes.array.isRequired,
+  add: PropTypes.func.isRequired,
+  save: PropTypes.func.isRequired
 
+
+}
 export default Modal;

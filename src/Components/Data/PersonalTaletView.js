@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-/* eslint linebreak-style: ["error", "windows"] */
+
 import './Form.css';
 
 function Tables(props) {
-  const { DataPerson } = props;
-  const { _deleteP } = props;
+  const { DataPerson, _deleteP } = props;
   return (
     <div>
       <table> 
