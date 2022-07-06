@@ -1,15 +1,14 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, {
+  createContext, useState, useEffect, useMemo 
+} from 'react';
 
 export const ThemeContext = createContext();
 
 function ThemeContextProvider(props) {
-  const [darkMode, setDarkMode] = useState(getInitialMode);
-
-  useEffect(() => {
-    localStorage.setItem('dark', JSON.stringify(darkMode));
-    getPrefColourScheme();
-  }, [darkMode]);
-
+  function getPrefColourScheme() {
+    if (!window.matchMedia) return;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
   function getInitialMode() {
     const isReturningUser = 'dark' in localStorage;
     const savedMode = JSON.parse(localStorage.getItem('dark'));
@@ -21,16 +20,18 @@ function ThemeContextProvider(props) {
     } 
     return false;
   }
-
-  function getPrefColourScheme() {
-    if (!window.matchMedia) return;
-
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
+  const [darkMode, setDarkMode] = useState(getInitialMode);
+  
+  useEffect(() => {
+    localStorage.setItem('dark', JSON.stringify(darkMode));
+    getPrefColourScheme();
+  }, [darkMode]);
+  const { children } = props;
+  // const Mode = useMemo(() => ({ darkMode, setDarkMode }), []);
   return (
     <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
-      {props.children}
-    </ThemeContext.Provider>
-  );
+      {children}  
+    </ThemeContext.Provider>  
+  );  
 }
 export default ThemeContextProvider;

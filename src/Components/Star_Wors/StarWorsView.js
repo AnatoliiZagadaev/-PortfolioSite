@@ -1,17 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 import './StarWors';
 
 function Tables(props) {
   const { Starswars } = props;
+  const { t } = useTranslation();
   return (
     <div>
-      <h1>The Star Wars Person</h1>
+      <h1>{t('starWars')}</h1>
       <table>
         <tbody>
           <tr>
-            <td>Name</td>
-            <td>Height</td>
-            <td>Eye color</td>
+            <td>{t('starWarsName')}</td>
+            <td>{t('height')}</td>
+            <td>{t('eye')}</td>
           </tr>
           {Starswars.map(({ name, height, eye_color }) => (
             <tr key={name}>
@@ -32,4 +35,7 @@ function Tables(props) {
 
   );
 }
+Tables.propTypes = {
+  Starswars: PropTypes.array.isRequired
+};
 export default Tables;

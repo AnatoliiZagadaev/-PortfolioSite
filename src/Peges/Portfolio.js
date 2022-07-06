@@ -1,5 +1,5 @@
 import React from 'react';
-/* eslint linebreak-style: ["error", "windows"] */
+import { useTranslation } from 'react-i18next';
 import AutumnForest from '../components/ImegComponent/AutumnForest';
 import DuckOnTheWater from '../components/ImegComponent/DuckOnTheWater';
 import Dungeon from '../components/ImegComponent/Dungeon';
@@ -8,9 +8,10 @@ import OceanBeach from '../components/ImegComponent/OceanBeach';
 import NationalPark from '../components/ImegComponent/NationalPark';
 
 function Portfolio() {
+  const { t } = useTranslation();
   return (
     <section>
-      <header id="portfolio"><h1>My Last Works</h1></header>
+      <header id="portfolio"><h1>{t('works')}</h1></header>
       <span className="row_gallery">
         <AutumnForest />
         <span className="space" />

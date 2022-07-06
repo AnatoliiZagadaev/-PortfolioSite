@@ -51,6 +51,12 @@ function DataPersonl() {
     // console.log('sorted');
     setDataPerson({ DataPerson, sorted });
   };
+  /* const sordCards = (a, b) => {
+    if (a.order > b.order) {
+      return 1;
+    } 
+    return -1;
+  }; */
   const handleReverse = () => {
     const sortedReverse = [...DataPerson];
     DataPerson.reverse();
@@ -58,7 +64,9 @@ function DataPersonl() {
   };
   return (
     <div>
-      <Tables DataPerson={DataPerson} _deleteP={deleteDataPerson} />
+      <Tables DataPerson={DataPerson} _delete={deleteDataPerson} />
+      <button className="actionBtn" onClick={() => sortDataPerson()}>sort by age</button>
+      <button className="actionBtn" onClick={() => handleReverse()}>Reverse</button>
       <Modal
         sorted={sortDataPerson}
         add={addDataPerson}

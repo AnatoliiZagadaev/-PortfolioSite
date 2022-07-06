@@ -1,11 +1,12 @@
 import React from 'react';
-/* eslint linebreak-style: ["error", "windows"] */
+import { useTranslation } from 'react-i18next';
 import DataPersonl from '../components/Data/DataPersonal';
 
 function Personal() {
+  const { t } = useTranslation();
   return (
     <section>
-      <h1>Data Person</h1>
+      <h1>{t('personal')}</h1>
       <DataPersonl />
     </section>
   );

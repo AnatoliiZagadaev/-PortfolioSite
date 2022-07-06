@@ -44,10 +44,10 @@ class FotoCommentsLifeCycle extends Component {
       [event.target.name]: event.target.value,
     });
   };
-  
+
   render() {
-    
-    const { comment, comments } = this.state;
+    const { comment } = this.state;
+    const { comments } = this.state;
     return (
       <div>
         <textarea name="comment" value={comment} onChange={this.handleChange} />
@@ -64,5 +64,4 @@ class FotoCommentsLifeCycle extends Component {
     );
   }
 }
-
 export default FotoCommentsLifeCycle;

@@ -1,4 +1,5 @@
-// eslint-disable-next-line max-classes-per-file
+/* eslint-disable no-plusplus */
+/* eslint-disable max-classes-per-file */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -6,10 +7,10 @@ class idGenerator {
   static id = 3;
 
   static next() {
-    this.id = 0;
-    return this.id;
+    return ++this.id;
   }
 }
+
 class Modal extends React.Component {
   constructor(props) {
     super(props);
@@ -59,18 +60,6 @@ class Modal extends React.Component {
     });
   };
 
-  handleSort = () => {
-    const { item } = this.state;
-    this.props.sorted(item);
-    this.setState(item);
-  };
-
-  handleReverse = () => {
-    const { item } = this.state;
-    this.props.sortedReverse(item);
-    this.setState(item);
-  };
-
   handleChangeFirstName = (event) => {
     const { item } = this.state;
     this.setState({ item: { ...item, firstName: event.target.value } });
@@ -92,15 +81,13 @@ class Modal extends React.Component {
   };
 
   render() {
-    const { item, isOpen } = this.state;
+    const { item } = this.state;
+    const { isOpen } = this.state;
    
     return (
       <>
         <div className="conteinerBtn">
           <button className="actionBtn" onClick={() => this.setState({ isOpen: true })}>Add Person</button>
-          <button className="actionBtn" onClick={() => this.sortDataPerson}>sort by age</button>
-          <button className="actionBtn" onClick={() => this.handleReverse}>Reverse</button>
-        
         </div>
         { isOpen && (
         <section>      
@@ -108,7 +95,6 @@ class Modal extends React.Component {
             <header id="Personal details"><h2>Personal details</h2></header>
             <span className="wrapper">
               <input
-                ref={this.nameInput}
                 onChange={this.handleChangeFirstName}
                 value={item.firstName}
                 type="text"
@@ -116,7 +102,6 @@ class Modal extends React.Component {
                 name="firstname"
               />
               <input
-                ref={this.sunameInput}
                 onChange={this.handleChangeSurenane}
                 value={item.surname}
                 type="text"
@@ -126,13 +111,12 @@ class Modal extends React.Component {
               <br />
             </span>
             <span className="wrapper">
-              <select ref={this.genderInput} value={item.gender} onChange={this.handleChangeGender} id="gender">
+              <select value={item.gender} onChange={this.handleChangeGender} id="gender">
                 <option>--Gender--</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
               </select>
               <input
-                ref={this.ageInput}
                 type="number"
                 value={item.age}
                 id="birthdate"
@@ -155,10 +139,8 @@ class Modal extends React.Component {
   }
 }
 Modal.propTypes = {
-  person: PropTypes.array.isRequired,
+  person: PropTypes.any.isRequired,
   add: PropTypes.func.isRequired,
   save: PropTypes.func.isRequired
-
-
-}
+};
 export default Modal;

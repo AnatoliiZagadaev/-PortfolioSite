@@ -1,15 +1,16 @@
 import React from 'react';
-/* eslint linebreak-style: ["error", "windows"] */
+import { useTranslation } from 'react-i18next';
 import dungeon from '../../assets/image/3.jpg';
 
 function Dungeon() {
+  const { t } = useTranslation();
   return (
     <span className="bloc relative visible_false">
       <img src={dungeon} alt="The dungeon" />
       <span className="innerBlock absolute">
         <span className="blocChild">
-          <h1>The dungeon</h1>
-          <p>Some text that describes the current photo</p>
+          <h1>{t('dungeon')}</h1>
+          <p>{t('someText')}</p>
         </span>
       </span>
     </span>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-/* eslint linebreak-style: ["error", "unix"] */
 import Tables from './StarWorsView';
 
 function Starswar() {
@@ -20,4 +19,4 @@ function Starswar() {
     </div>  
   );
 }       
-export default Starswar;
+export default Starswar; 

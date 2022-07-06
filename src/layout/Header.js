@@ -1,8 +1,11 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-import PropTypes from 'prop-types';
 import './Header.css';
+import { useTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 
 function Header({ darkMode, setDarkMode }) {
+  const { t, i18n } = useTranslation();
   return (
     <div>
       <div className={darkMode ? 'dark-mode' : 'light-mode'}>
@@ -22,10 +25,10 @@ function Header({ darkMode, setDarkMode }) {
             <span className="font_bolt">
               <nav>
                 <ul>
-                  <li><a className="link" href="About">About</a></li>
-                  <li><a className="link" href="Portfolio">Works</a></li>
-                  <li><a className="link" href="Instagramm">Instagramm</a></li>
-                  <li><a className="link" href="Personal">Personal details</a></li>
+                  <li><a className="link" href="About">{t('about')}</a></li>
+                  <li><a className="link" href="Portfolio">{t('portfolio')}</a></li>
+                  <li><a className="link" href="Instagramm">{t('instagramm')}</a></li>
+                  <li><a className="link" href="Personal">{t('personal')}</a></li>
                 </ul>
                 <div className="toggle-container">
                   <span style={{ color: darkMode ? 'grey' : 'yellow' }}>☀︎</span>
@@ -40,7 +43,11 @@ function Header({ darkMode, setDarkMode }) {
                     <label htmlFor="checkbox" />
                   </span>
                   <span style={{ color: darkMode ? '#9c27b0' : 'grey' }}>☽</span>
+                  <button onClick={() => i18n.changeLanguage('ua')}>ua</button>
+                  <button onClick={() => i18n.changeLanguage('en')}>en</button>
+                  <button onClick={() => i18n.changeLanguage('fr')}>fr</button>
                 </div>
+                
               </nav>
             </span>
       
@@ -50,5 +57,8 @@ function Header({ darkMode, setDarkMode }) {
     </div>
   );
 }
-
+Header.propTypes = {
+  darkMode: PropTypes.func.isRequired,
+  setDarkMode: PropTypes.func.isRequired 
+};
 export default Header;

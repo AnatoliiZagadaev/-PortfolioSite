@@ -1,5 +1,6 @@
 import React from 'react';
 // import Photographer from '../image/Photographer.png';
+
 export default class LoadAndError extends React.Component {
   constructor(props) {
     super(props);

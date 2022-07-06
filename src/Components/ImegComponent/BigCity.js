@@ -1,15 +1,16 @@
 import React from 'react';
-/* eslint linebreak-style: ["error", "windows"] */
+import { useTranslation } from 'react-i18next';
 import bigCity from '../../assets/image/4.jpg';
 
 function BigCity() {
+  const { t } = useTranslation();
   return (
     <span className="bloc relative">
       <img src={bigCity} alt="Big city" />
       <span className="innerBlock absolute">
         <span className="blocChild">
-          <h1>Big city</h1>
-          <p>Some text that describes the current photo</p>
+          <h1>{t('city')}</h1>
+          <p>{t('someText')}</p>
         </span>
       </span>
     </span>

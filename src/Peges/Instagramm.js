@@ -1,5 +1,5 @@
 import React from 'react';
-/* eslint linebreak-style: ["error", "windows"] */
+import { useTranslation } from 'react-i18next';
 import tangerineAndChocolate from '../assets/image/8.jpg';
 import manOnTheStone from '../assets/image/9.jpg';
 import youngGirl from '../assets/image/11.jpg';
@@ -9,10 +9,11 @@ import volleyball from '../assets/image/14.jpg';
 import search from '../assets/image/154836.png';
 
 function Instagramm() {
+  const { t } = useTranslation();
   return (
     <section>
       <header id="instagramm">
-        <h1>Follow me on Instagram</h1>
+        <h1>{t('follow')}</h1>
       </header>
       <span className="row_gallery">
         <span className="bloc relative">

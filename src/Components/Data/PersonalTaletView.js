@@ -1,20 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { useTranslation } from 'react-i18next';
 import './Form.css';
 
 function Tables(props) {
-  const { DataPerson, _deleteP } = props;
+  const { DataPerson, _delete } = props;
+  const { t } = useTranslation();
   return (
     <div>
       <table> 
         <tbody>
           <tr>
-            <td>First Name</td>
-            <td>Suname</td>
-            <td>Gender</td>
-            <td>Age</td>
-            <td>Delete</td>
+            <td>{t('firstName')}</td>
+            <td>{t('surname')}</td>
+            <td>{t('gender')}</td>
+            <td>{t('age')}</td>
+            <td>{t('delete')}</td>
           </tr>
           {DataPerson.map((item) => (
             <tr key={item.id}>
@@ -29,10 +30,10 @@ function Tables(props) {
               <td>
                 <button
                   className="actionBtn"
-                  onClick={() => { _deleteP(item); }}
+                  onClick={() => { _delete(item); }}
                 >
                   {' '}
-                  Delete
+                  {t('delete')}
                 </button>
               </td>
             </tr>
@@ -43,8 +44,7 @@ function Tables(props) {
   );
 }
 Tables.propTypes = {
-  DataPerson: PropTypes.isRequired,
-  _deleteP: PropTypes.isRequired
+  DataPerson: PropTypes.array.isRequired,
+  _delete: PropTypes.func.isRequired
 };
-
 export default Tables;
