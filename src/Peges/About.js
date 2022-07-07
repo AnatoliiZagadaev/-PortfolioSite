@@ -18,6 +18,7 @@ function About() {
           {' '}
         </span>
         <span className="text">
+
           <p><span className="font_bolt">{t('nema')}</span></p>
           <ul>
             <DragAndDrop />
