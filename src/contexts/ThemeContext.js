@@ -1,7 +1,5 @@
-import React, {
-  createContext, useState, useEffect, useMemo 
-} from 'react';
-
+import React, { createContext, useState, useEffect, useMemo } from 'react';
+/* eslint linebreak-style: ["error", "windows"] */
 export const ThemeContext = createContext();
 
 function ThemeContextProvider(props) {

@@ -25,13 +25,15 @@ class Modal extends React.Component {
   componentDidUpdate(prevProp) {
     const { person } = this.props;
     if (prevProp.person !== person) {
-      this.setState({
-        isOpen: !!person,
-        item: person
-          ? { ...person }
-          : {
-            firstName: '', surname: '', age: ' ', gender: '' 
-          }
+      this.onUpdate(function callback() {
+        this.setState({
+          isOpen: !!person,
+          item: person
+            ? { ...person }
+            : {
+              firstName: '', surname: '', age: ' ', gender: '' 
+            }
+        });
       });
     }
   }
@@ -81,9 +83,7 @@ class Modal extends React.Component {
   };
 
   render() {
-    const { item } = this.state;
-    const { isOpen } = this.state;
-   
+    const { item, isOpen } = this.state;
     return (
       <>
         <div className="conteinerBtn">

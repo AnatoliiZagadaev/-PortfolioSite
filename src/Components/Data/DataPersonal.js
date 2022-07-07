@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import React, { useState } from 'react';
 import Tables from './PersonalTaletView';
 import Modal from './FormPersonal';
@@ -65,8 +66,6 @@ function DataPersonl() {
   return (
     <div>
       <Tables DataPerson={DataPerson} _delete={deleteDataPerson} />
-      <button className="actionBtn" onClick={() => sortDataPerson()}>sort by age</button>
-      <button className="actionBtn" onClick={() => handleReverse()}>Reverse</button>
       <Modal
         sorted={sortDataPerson}
         add={addDataPerson}
@@ -74,6 +73,10 @@ function DataPersonl() {
         sortedReverse={handleReverse}
         dataperson={editDataPerson}
       />
+      <div className="conteinerBtn">
+        <button className="actionBtn" onClick={() => sortDataPerson()}>sort by age</button>
+        <button className="actionBtn" onClick={() => handleReverse()}>Reverse</button>
+      </div>
     </div>
   );
 }

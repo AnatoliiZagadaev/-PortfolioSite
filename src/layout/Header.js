@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Header.css';
 import { useTranslation } from 'react-i18next';
-import PropTypes from 'prop-types';
 
 function Header({ darkMode, setDarkMode }) {
   const { t, i18n } = useTranslation();
@@ -59,6 +59,7 @@ function Header({ darkMode, setDarkMode }) {
 }
 Header.propTypes = {
   darkMode: PropTypes.func.isRequired,
-  setDarkMode: PropTypes.func.isRequired 
+  setDarkMode: PropTypes.func.isRequired
 };
+
 export default Header;

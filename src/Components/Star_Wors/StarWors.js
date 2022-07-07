@@ -1,5 +1,6 @@
+/* eslint-disable import/no-cycle */
 import React, { useEffect, useState } from 'react';
-import Tables from './StarWorsView';
+import TablesStarsWar from './StarWorsView';
 
 function Starswar() {
   const [Starswars, setStarswars] = useState([]);
@@ -15,7 +16,7 @@ function Starswar() {
  
   return (
     <div>
-      <Tables Starswars={Starswars} />
+      <TablesStarsWar Starswars={Starswars} />
     </div>  
   );
 }       

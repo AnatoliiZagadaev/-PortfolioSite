@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/tabindex-no-positive */
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React from 'react';
 
 export default class FocusArrow extends React.Component {
@@ -14,22 +16,12 @@ export default class FocusArrow extends React.Component {
     const node = this.myRef.current;
     
     node.addEventListener('keydown', (event) => {
-      const active = document.activeElement;
-      const actives = document.activeElement;
-      const activeMove = document.activeElement;
+      const active = document.activeElement; 
       if (event.keyCode === 40 && active.nextSibling) {
         active.nextSibling.focus();
       }
       if (event.keyCode === 38 && active.previousSibling) {
         active.previousSibling.focus();
-      }
-      
-      for (let i = 0; activeMove.length > i; i++) {
-        activeMove[i].onclick = function () {
-          const currentActive = actives[0];
-          if (currentActive) { currentActive.classList.remove('active'); }
-          if (currentActive !== this) { this.classList.add('active'); }
-        }; 
       }
     });
   }

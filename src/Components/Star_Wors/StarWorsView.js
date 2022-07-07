@@ -1,10 +1,12 @@
+/* eslint-disable no-undef */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'react-i18next';
 import './StarWors';
 
-function Tables(props) {
+function TablesStarsWar(props) {
   const { Starswars } = props;
+ 
   const { t } = useTranslation();
   return (
     <div>
@@ -35,7 +37,7 @@ function Tables(props) {
 
   );
 }
-Tables.propTypes = {
+TablesStarsWar.propTypes = {
   Starswars: PropTypes.array.isRequired
 };
-export default Tables;
+export default TablesStarsWar;

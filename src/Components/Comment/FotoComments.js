@@ -1,4 +1,5 @@
 import React from 'react';
+/* eslint linebreak-style: ["error", "windows"] */
 
 class FotoComments extends React.Component {
   constructor(props) {
