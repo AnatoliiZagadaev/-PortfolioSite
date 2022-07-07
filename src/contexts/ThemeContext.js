@@ -1,5 +1,10 @@
-import React, { createContext, useState, useEffect, useMemo } from 'react';
+/* eslint-disable consistent-return */
 /* eslint linebreak-style: ["error", "windows"] */
+import React, {
+  createContext, useState, useEffect, useMemo 
+} from 'react';
+import PropTypes from 'prop-types';
+
 export const ThemeContext = createContext();
 
 function ThemeContextProvider(props) {
@@ -25,11 +30,17 @@ function ThemeContextProvider(props) {
     getPrefColourScheme();
   }, [darkMode]);
   const { children } = props;
-  // const Mode = useMemo(() => ({ darkMode, setDarkMode }), []);
+  const valueDarkMode = useMemo(() => ({
+    darkMode, setDarkMode
+  }), [darkMode]);
   return (
-    <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
+    <ThemeContext.Provider value={valueDarkMode}>
       {children}  
     </ThemeContext.Provider>  
   );  
 }
+ThemeContextProvider.propTypes = {
+  children: PropTypes.object.isRequired
+
+};
 export default ThemeContextProvider;

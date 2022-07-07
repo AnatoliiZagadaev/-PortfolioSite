@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import React from 'react';
 import ReactDragList from 'react-drag-list';
 
@@ -36,6 +37,7 @@ export default class DragAndDrop extends React.Component {
       <ReactDragList
         dataSource={dataSource}
         rowKey="list"
+        // eslint-disable-next-line react/no-unstable-nested-components
         row={(record, index) => (
           <ul key={index}>
             <li>{record.list }</li>
