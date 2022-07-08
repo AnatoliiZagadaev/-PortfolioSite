@@ -1,10 +1,5 @@
-/* eslint-disable consistent-return */
+import React, { createContext, useState, useEffect, useMemo } from 'react';
 /* eslint linebreak-style: ["error", "windows"] */
-import React, {
-  createContext, useState, useEffect, useMemo 
-} from 'react';
-import PropTypes from 'prop-types';
-
 export const ThemeContext = createContext();
 
 function ThemeContextProvider(props) {
@@ -30,17 +25,11 @@ function ThemeContextProvider(props) {
     getPrefColourScheme();
   }, [darkMode]);
   const { children } = props;
-  const valueDarkMode = useMemo(() => ({
-    darkMode, setDarkMode
-  }), [darkMode]);
+  // const Mode = useMemo(() => ({ darkMode, setDarkMode }), []);
   return (
-    <ThemeContext.Provider value={valueDarkMode}>
+    <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
       {children}  
     </ThemeContext.Provider>  
   );  
 }
-ThemeContextProvider.propTypes = {
-  children: PropTypes.element.isRequired
-
-};
 export default ThemeContextProvider;

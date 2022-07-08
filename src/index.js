@@ -4,7 +4,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ThemeContextProvider from './contexts/ThemeContext';
 import i18n from './i18n';
-/* eslint-disable no-unused-vars */
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
