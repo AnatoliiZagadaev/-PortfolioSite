@@ -40,7 +40,7 @@ function ThemeContextProvider(props) {
   );  
 }
 ThemeContextProvider.propTypes = {
-  children: PropTypes.object.isRequired
+  children: PropTypes.element.isRequired
 
 };
 export default ThemeContextProvider;
