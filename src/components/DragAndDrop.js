@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+/* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
 import ReactDragList from 'react-drag-list';
 

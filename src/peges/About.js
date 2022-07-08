@@ -5,7 +5,6 @@ import FocusArrow from '../components/OnFocusArrow';
 import DragAndDrop from '../components/DragAndDrop';
 import LoadAndError from '../components/LoadAndError';
 
-
 function About() {
   const { t } = useTranslation();
 
