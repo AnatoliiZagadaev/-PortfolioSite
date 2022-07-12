@@ -36,7 +36,10 @@
     "surname":"Nom de famille",
     "gender":"Sexe",
     "age":"Âge",
-    "delete":"Effacer"
+    "delete":"Effacer",
+    "titre":"titre",
+   "prix":"prix",
+   "catégorie":"catégorie"
     }
   }
   

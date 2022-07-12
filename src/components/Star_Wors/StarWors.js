@@ -15,9 +15,9 @@ function Starswar() {
   }, []);
  
   return (
-    <div>
+    <section>
       <TablesStarsWar Starswars={Starswars} />
-    </div>  
+    </section>  
   );
 }       
 export default Starswar; 

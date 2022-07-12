@@ -62,7 +62,7 @@ table {
     font-size: 14px;
     border-collapse: collapse;
     text-align: center;
-    left:30%; 
+   
     position: relative;
   }
   th,
@@ -99,8 +99,9 @@ table {
 }
 .conteinerBtn{
   display: flex;
-  justify-content: center;
+  justify-content:left;
 }
 .active {
   border: solid 2px green;
 }
+

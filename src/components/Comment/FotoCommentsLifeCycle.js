@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import React, { Component } from 'react';
 
 class FotoCommentsLifeCycle extends Component {

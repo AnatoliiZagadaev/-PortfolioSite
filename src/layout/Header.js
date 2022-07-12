@@ -58,7 +58,7 @@ function Header({ darkMode, setDarkMode }) {
   );
 }
 Header.propTypes = {
-  darkMode: PropTypes.func.isRequired,
+  darkMode: PropTypes.bool.isRequired,
   setDarkMode: PropTypes.func.isRequired
 };
 
