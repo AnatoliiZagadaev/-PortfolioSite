@@ -139,7 +139,7 @@ class Modal extends React.Component {
   }
 }
 Modal.propTypes = {
-  person: PropTypes.any.isRequired,
+  person: PropTypes.object.isRequired,
   add: PropTypes.func.isRequired,
   save: PropTypes.func.isRequired
 };

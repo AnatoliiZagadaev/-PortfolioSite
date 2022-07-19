@@ -22,11 +22,15 @@ function Tables(props) {
               <td>
                 {item.firstName}
               </td>
-              <td>{item.surname}</td>
+              <td>
+                {item.surname}
+              </td>
               <td>
                 {item.gender}
               </td>
-              <td>{item.age}</td>
+              <td>
+                {item.age}
+              </td>
               <td>
                 <button
                   className="actionBtn"

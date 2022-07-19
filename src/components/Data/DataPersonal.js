@@ -37,27 +37,33 @@ function DataPersonl() {
   const addDataPerson = (dataperson) => {
     setDataPerson((prevDataPerson) => ([...prevDataPerson, dataperson]));
   };    
-  const saveDataPerson = (dataperson) => {
+  /* const saveDataPerson = (dataperson) => {
     setDataPerson(
       DataPerson.reduce((acc, p) => {
-        if (p.id === dataperson.id) acc.push(dataperson);
-        else acc.push(p);
+        if (p.id === dataperson.id) {
+          acc.push(dataperson);
+        } else {
+          acc.push(p); 
+        }
         return acc;
       }, [])
+    );
+  }; */
+  const saveDataPerson = (dataperson) => {
+    setDataPerson(
+      DataPerson.reduce(
+        (acc, p) => ([...acc, p.id === dataperson.id ? dataperson : p]),
+        []
+      )
     );
   };
   const sortDataPerson = () => {
     const sorted = [...DataPerson];
-    sorted.sort((a, b) => ((b.age > a.age) ? 1 : -1));
+    sorted.sort((a, b) => (b.age > a.age ? 1 : -1));
     // console.log('sorted');
     setDataPerson({ DataPerson, sorted });
   };
-  /* const sordCards = (a, b) => {
-    if (a.order > b.order) {
-      return 1;
-    } 
-    return -1;
-  }; */
+  
   const handleReverse = () => {
     const sortedReverse = [...DataPerson];
     DataPerson.reverse();

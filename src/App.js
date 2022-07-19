@@ -1,7 +1,7 @@
 import { React, useContext } from 'react';
 import './App.css';
 import {
-  BrowserRouter as Router,   
+  BrowserRouter,   
   Route,
   Routes,
 } from 'react-router-dom';
@@ -29,25 +29,22 @@ const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 function App() {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   return (
-    <div className={darkMode ? 'dark-mode' : 'light-mode'}>
-      <Header setDarkMode={setDarkMode} darkMode={darkMode} />
-      <About />
-      <Portfolio />
-      <Instagramm />
-      <Personal />
-      <Starswar />
-      <Provider store={store}>
-        <Products />
-      </Provider>
-      <Router>
-        <Routes>
-          <Route path="/About" component={About} />
-          <Route path="/Portfolio" component={Portfolio} />
-          <Route path="/Instagramm" component={Instagramm} />
-        </Routes>
-      </Router>      
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className={darkMode ? 'dark-mode' : 'light-mode'}>
+        <Header setDarkMode={setDarkMode} darkMode={darkMode} />
+        <Provider store={store}>
+          <Routes>
+            <Route path="/" element={<About />} />
+            <Route path="/Portfolio" element={<Portfolio />} />
+            <Route path="/Instagramm" element={<Instagramm />} />
+            <Route path="/Personal" element={<Personal />} />
+            <Route path="/Starswar" element={<Starswar />} />
+            <Route path="/Products" element={<Products />} />
+          </Routes>
+        </Provider>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

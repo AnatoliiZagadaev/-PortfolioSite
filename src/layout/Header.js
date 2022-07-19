@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './Header.css';
 import { useTranslation } from 'react-i18next';
@@ -25,10 +26,36 @@ function Header({ darkMode, setDarkMode }) {
             <span className="font_bolt">
               <nav>
                 <ul>
-                  <li><a className="link" href="About">{t('about')}</a></li>
-                  <li><a className="link" href="Portfolio">{t('portfolio')}</a></li>
-                  <li><a className="link" href="Instagramm">{t('instagramm')}</a></li>
-                  <li><a className="link" href="Personal">{t('personal')}</a></li>
+                  <Link to="/" className="links"> 
+                    {' '}
+                    {t('about')}
+                    {' '}
+                  </Link>
+                  <Link to="/Portfolio" className="links">  
+                    {' '}
+                    {t('portfolio')}
+                    {' '}
+                  </Link>
+                  <Link to="/Instagramm" className="links"> 
+                    {' '}
+                    {t('instagramm')}
+                    {' '}
+                  </Link>
+                  <Link to="/Personal" className="links"> 
+                    {' '}
+                    {t('personal')}
+                    {' '}
+                  </Link>
+                  <Link to="/Starswar" className="links"> 
+                    {' '}
+                    {t('starswar')}
+                    {' '}
+                  </Link>
+                  <Link to="/Products" className="links"> 
+                    {' '}
+                    {t('products')}
+                    {' '}
+                  </Link>
                 </ul>
                 <div className="toggle-container">
                   <span style={{ color: darkMode ? 'grey' : 'yellow' }}>☀︎</span>
