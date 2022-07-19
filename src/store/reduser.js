@@ -25,7 +25,7 @@ function Product() {
   }
   return (
     <section>
-      <h1>{t('Products')}</h1>
+      <h1>{t('products')}</h1>
       <button onClick={() => dispatch(fetchAllProducts())}>Reload date</button>
       <table>
         <tbody>
