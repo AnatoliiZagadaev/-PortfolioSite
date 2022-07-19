@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { fetchAllProducts } from './actions/actionCreator';
+import Loader from '../components/Loader/Loader';
 
 function Product() {
   const { t } = useTranslation();
@@ -12,7 +13,12 @@ function Product() {
     dispatch(fetchAllProducts());
   }, [dispatch]);
   if (loading) {
-    return <h4>loading..</h4>;
+    return (
+      <h4>
+        <Loader />
+        loading..
+      </h4>
+    );
   }
   if (error != null) {
     return <h4>{error}</h4>;
