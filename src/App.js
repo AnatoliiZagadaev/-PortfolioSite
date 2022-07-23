@@ -5,7 +5,7 @@ import {
   Route,
   Routes,
 } from 'react-router-dom';
-import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { configureStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
@@ -24,7 +24,7 @@ const reducer = combineReducers({
   products: productReducer
 });
 
-const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
+const store = configureStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 
 function App() {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
