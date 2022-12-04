@@ -1,4 +1,4 @@
- /* eslint-disable import/no-cycle */
+/* eslint-disable import/no-cycle */
 import React, { useEffect, useState } from 'react';
 import TablesStarsWar from './StarWorsView';
 
