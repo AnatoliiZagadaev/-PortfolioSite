@@ -79,10 +79,6 @@ function DataPersonl() {
         sortedReverse={handleReverse}
         dataperson={editDataPerson}
       />
-      <div className="conteinerBtn">
-        <button className="actionBtn" onClick={() => sortDataPerson()}>sort by age</button>
-        <button className="actionBtn" onClick={() => handleReverse()}>Reverse</button>
-      </div>
     </div>
   );
 }
